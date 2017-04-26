@@ -1,0 +1,10 @@
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\bin\Debug\Team_Manager.Data.Common.dll.config
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\bin\Debug\Team_Manager.Data.Common.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\bin\Debug\Team_Manager.Data.Common.pdb
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\bin\Debug\EntityFramework.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\bin\Debug\EntityFramework.SqlServer.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\bin\Debug\EntityFramework.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\bin\Debug\EntityFramework.SqlServer.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\obj\Debug\Team_Manager.Data.Common.csprojResolveAssemblyReference.cache
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\obj\Debug\Team_Manager.Data.Common.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Common\obj\Debug\Team_Manager.Data.Common.pdb

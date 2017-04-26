@@ -1,0 +1,16 @@
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Team_Manager.Data.Models.dll.config
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Team_Manager.Data.Models.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Team_Manager.Data.Models.pdb
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\EntityFramework.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\EntityFramework.SqlServer.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\EntityFramework.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\EntityFramework.SqlServer.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.Core.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\obj\Debug\Team_Manager.Data.Models.csprojResolveAssemblyReference.cache
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\obj\Debug\Team_Manager.Data.Models.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\obj\Debug\Team_Manager.Data.Models.pdb
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Team_Manager.Data.Common.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data.Models\bin\Debug\Team_Manager.Data.Common.pdb

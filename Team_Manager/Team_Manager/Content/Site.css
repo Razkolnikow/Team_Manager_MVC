@@ -1,0 +1,122 @@
+@font-face {
+    font-family: Anton-Reg;
+    src: url('fonts/Anton/Anton-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Archivo;
+    src: url('fonts/Archivo_Black/ArchivoBlack-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Barrio;
+    src: url('fonts/Barrio/Barrio-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Bungee;
+    src: url('fonts/Bungee_Shade/BungeeShade-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Ceviche;
+    src: url('fonts/Ceviche_One/CevicheOne-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Creepster;
+    src: url('fonts/Creepster/Creepster-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Faster;
+    src: url('fonts/Faster_One/FasterOne-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Fredoka;
+    src: url('fonts/Fredoka_One/FredokaOne-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Shojumaru;
+    src: url('fonts/Shojumaru/Shojumaru-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Winds;
+    src: url('fonts/Trade_Winds/TradeWinds-Regular.ttf');
+    font-size: 100px;
+}
+
+@font-face {
+    font-family: Slackey;
+    src: url('fonts/Slackey/Slackey.ttf');
+    font-size: 400px;
+}
+
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists
+   will truncate terms that are too long to fit in the left column
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+#page-name-header {
+  text-align: center;
+  font-family: "Fredoka";
+  margin-top: 70px;
+}
+
+#login-header {
+  font-family: "Fredoka";
+}
+
+.fredoka {
+  font-family: "Fredoka";
+  font-size: 1.2em;
+}
+
+#form-container {
+  display: flex;
+  justify-content: center;
+}
+
+#main-navbar-custom {
+  height: 60px;
+}
+
+.body-content {
+  margin-top: 80px;
+}
+
+.logo {
+  font-size: 1.6em;
+}
