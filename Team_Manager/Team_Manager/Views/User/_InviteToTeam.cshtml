@@ -1,28 +1,29 @@
 ﻿@using Microsoft.AspNet.Identity
 @model Team_Manager.Services.Data.ViewModels.CurrentUserTeamsViewModel
 
-@using (Html.BeginForm("SendInvitation", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
-{
-    @Html.AntiForgeryToken()
-    <div class="form-group">
-        <label for="select" class="col-lg-2 control-label">Teams</label>
-        <div class="col-md-10">
-            <select name="teamId" class="form-control" id="select">
-                @foreach (var team in this.Model.Teams)
+<div class="container-fluid well">
+    @using (Html.BeginForm("SendInvitation", "User", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+    {
+        @Html.AntiForgeryToken()
+        <div class="form-group">
+            <label for="select" class="col-lg-2 control-label">Teams</label>
+            <div class="col-md-10">
+                <select name="teamId" class="form-control" id="select">
+                    @foreach (var team in this.Model.Teams)
                 {
-                    <option value="@team.Id">@team.Name</option>
-                }
-            </select>
+                        <option value="@team.Id">@team.Name</option>
+                    }
+                </select>
+            </div>
+            <input type="hidden" value="@this.Model.TargetedUserId" name="TargetedUserId" />
+            <input type="hidden" value="@User.Identity.GetUserId()" name="SenderId" />
         </div>
-        <input type="hidden" value="@this.Model.TargetedUserId" name="TargetedUserId" />
-        <input type="hidden" value="@User.Identity.GetUserId()" name="SenderId" />
-    </div>
-    <div class="form-group">
-        <div class="col-md-offset-2 col-md-10">
-            <button type="reset" class="btn btn-default">Cancel</button>
-            <input type="submit" value="Invite" class="btn btn-default" />
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <input type="submit" value="Invite" class="btn btn-default" />
+            </div>
         </div>
-    </div>
-}
-
+    }
+</div>
 

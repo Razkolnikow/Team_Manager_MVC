@@ -1,21 +1,23 @@
 ﻿@model Team_Manager.Services.Data.ViewModels.ShowTeamViewModel
 
 
+<div class="well container-fluid">
+    <h2>Team name - @this.Model.BasicTeamInfo.Name</h2>
+    <h3>Team Category - @this.Model.BasicTeamInfo.Category</h3>
+    <h3>Team - Subcategory - @this.Model.BasicTeamInfo.SubCategory</h3>
 
-<h2>Team name - @this.Model.BasicTeamInfo.Name</h2>
-<h3>Team Category - @this.Model.BasicTeamInfo.Category</h3>
-<h3>Team - Subcategory - @this.Model.BasicTeamInfo.SubCategory</h3>
+    <h3>Topics: </h3>
+    @foreach (var topic in this.Model.Topics)
+    {
+        <div>@Html.ActionLink(topic.Title, "ShowTeamTopic", "Team", new { topicId = topic.Id }, null)</div>
+    }
 
-<h3>Topics: </h3>
-@foreach (var topic in this.Model.Topics)
-{
-    <div>@Html.ActionLink(topic.Title, "ShowTeamTopic", "Team", new { topicId = topic.Id }, null)</div>
-}
+    <h3>Members: </h3>
+    @foreach (var member in this.Model.TeamMembers)
+    {
+        <div>@member.UserName</div>
+    }
 
-<h3>Members: </h3>
-@foreach (var member in this.Model.TeamMembers)
-{
-    <div>@member.UserName</div>
-}
+    @Html.ActionLink("Create Topic", "CreateTopic", "Team", new { teamId = this.Model.BasicTeamInfo.Id }, null)
 
-@Html.ActionLink("Create Topic", "CreateTopic", "Team", new {teamId = this.Model.BasicTeamInfo.Id}, null)
+</div>

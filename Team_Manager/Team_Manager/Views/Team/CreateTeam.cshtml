@@ -1,44 +1,46 @@
-﻿<div class="row">
-    <div class="col-lg-6">
-        <div class="well bs-component">
-            @using (Html.BeginForm("CreateTeam", "Team", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+﻿<div class="container-fluid well">
+    <div class="row">
+        <div class="col-lg-6">
+            <div class="well bs-component">
+                @using (Html.BeginForm("CreateTeam", "Team", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
             {
-                @Html.AntiForgeryToken()
-                <fieldset>
-                    <legend>Create Team</legend>
-                    <div class="form-group">
-                        <label for="teamName" class="col-lg-2 control-label">Name</label>
-                        <div class="col-lg-10">
-                            <input type="text" name="Name" class="form-control" id="teamName" placeholder="Team Name">
+                    @Html.AntiForgeryToken()
+                    <fieldset>
+                        <legend>Create Team</legend>
+                        <div class="form-group">
+                            <label for="teamName" class="col-lg-2 control-label">Name</label>
+                            <div class="col-lg-10">
+                                <input type="text" name="Name" class="form-control" id="teamName" placeholder="Team Name">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="category" class="col-lg-2 control-label">Category</label>
-                        <div class="col-lg-10">
-                            <select name="category" class="form-control" id="select">
-                                <option value="Sport">Sport</option>
-                                <option value="Marketing">Marketing</option>
-                                <option value="Sales">Sales</option>
-                                <option value="Technology">Technology</option>
-                                <option value="Finance">Finance</option>
-                                <option value="Other">Other</option>
-                            </select>
+                        <div class="form-group">
+                            <label for="category" class="col-lg-2 control-label">Category</label>
+                            <div class="col-lg-10">
+                                <select name="category" class="form-control" id="select">
+                                    <option value="Sport">Sport</option>
+                                    <option value="Marketing">Marketing</option>
+                                    <option value="Sales">Sales</option>
+                                    <option value="Technology">Technology</option>
+                                    <option value="Finance">Finance</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="subcategory" class="col-lg-2 control-label">Subcategory</label>
-                        <div class="col-lg-10">
-                            <input type="text" name="subcategory" class="form-control" id="subcategory" placeholder="Subcategory">
+                        <div class="form-group">
+                            <label for="subcategory" class="col-lg-2 control-label">Subcategory</label>
+                            <div class="col-lg-10">
+                                <input type="text" name="subcategory" class="form-control" id="subcategory" placeholder="Subcategory">
+                            </div>
                         </div>
-                    </div>
-                    <div class="form-group">
-                        <div class="col-lg-10 col-lg-offset-2">
-                            <button type="reset" class="btn btn-default">Cancel</button>
-                            <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="form-group">
+                            <div class="col-lg-10 col-lg-offset-2">
+                                <button type="reset" class="btn btn-default">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Submit</button>
+                            </div>
                         </div>
-                    </div>
-                </fieldset>
-            }
+                    </fieldset>
+                }
+            </div>
         </div>
     </div>
 </div>

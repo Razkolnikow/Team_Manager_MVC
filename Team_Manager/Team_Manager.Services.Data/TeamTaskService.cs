@@ -55,6 +55,18 @@ namespace Team_Manager.Services.Data
             return MapTaskViewModelFromTeamTask(this.Data.GetById(taskId));
         }
 
+        public IEnumerable<TeamTaskViewModel> GetAllTeamTasks(int teamId)
+        {
+            var team = this.teams.GetById(teamId);
+            IEnumerable<TeamTaskViewModel> teamTasks = team.TeamTasks.Select(t => new TeamTaskViewModel()
+            {
+                Id = t.Id,
+                TeamMemberName = t.TeamMember.UserName
+            });
+
+            return teamTasks;
+        }
+
         private TaskViewModel MapTaskViewModelFromTeamTask(TeamTask task)
         {
             var config = new MapperConfiguration(cfg =>

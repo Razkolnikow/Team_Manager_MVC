@@ -1,11 +1,12 @@
 ﻿@using Team_Manager.Services.Data.ViewModels;
 @model IEnumerable<TeamMemberViewModel>
-<h2 class="fredoka custom-header">All Users</h2>
-@foreach (var user in this.Model)
-{
-    <div class="panel centered-element">
-        @Html.ActionLink(user.UserName, "UserInfo", "User", new { userId = user.Id }, new { @class = "success custom-header" })
-    </div>
-}
-
+<div class="container-fluid well">
+    <h2 class="fredoka custom-header">All Users</h2>
+    @foreach (var user in this.Model)
+    {
+        <div class="panel centered-element">
+            @Html.ActionLink(user.UserName, "UserInfo", "User", new { userId = user.Id }, new { @class = "success custom-header" })
+        </div>
+    }
+</div>
 

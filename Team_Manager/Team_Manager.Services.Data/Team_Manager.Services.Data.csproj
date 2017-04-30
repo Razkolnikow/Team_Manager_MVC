@@ -83,6 +83,7 @@
     <Compile Include="ViewModels\ShowTeamViewModel.cs" />
     <Compile Include="ViewModels\SimpleTeamViewModel.cs" />
     <Compile Include="ViewModels\TaskViewModels\TaskViewModel.cs" />
+    <Compile Include="ViewModels\TaskViewModels\TeamTaskViewModel.cs" />
     <Compile Include="ViewModels\TeamMemberViewModel.cs" />
     <Compile Include="ViewModels\TeamViewModel.cs" />
     <Compile Include="ViewModels\TopicViewModel.cs" />

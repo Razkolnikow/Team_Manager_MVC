@@ -1,19 +1,20 @@
 ﻿@using Microsoft.AspNet.Identity
 @model Team_Manager.Services.Data.ViewModels.TopicWithCommentsViewModel
 
-<h2>ShowTeamTopic</h2>
-<h2>@this.Model.Title</h2>
-@foreach (var comment in this.Model.Comments)
-{
-    <div>@comment.Content</div>
-    <div>@comment.Author</div>
-    <div>@comment.CreatedOn</div>
-}
+<div class="container-fluid well">
+    <h2>ShowTeamTopic</h2>
+    <h2>@this.Model.Title</h2>
+    @foreach (var comment in this.Model.Comments)
+    {
+        <div>@comment.Content</div>
+        <div>@comment.Author</div>
+        <div>@comment.CreatedOn</div>
+    }
 
-@using (Html.BeginForm("CreateComment", "Team"))
-{
-    @Html.AntiForgeryToken()
-    @Ajax.ActionLink("Add Comment",
+    @using (Html.BeginForm("CreateComment", "Team"))
+    {
+        @Html.AntiForgeryToken()
+        @Ajax.ActionLink("Add Comment",
         "AddComment",
         null,
         new AjaxOptions
@@ -22,9 +23,10 @@
             InsertionMode = InsertionMode.Replace,
             HttpMethod = "GET"
         },
-        new {@class = "btn btn-primary"}
+        new { @class = "btn btn-primary" }
         )
-    <input type="hidden" name="AuthorId" value="@User.Identity.GetUserId()"/>
-    <input type="hidden" name="TopicId" value="@this.Model.Id"/>
-    <div id="add-comment"></div>
-}
+        <input type="hidden" name="AuthorId" value="@User.Identity.GetUserId()" />
+        <input type="hidden" name="TopicId" value="@this.Model.Id" />
+        <div id="add-comment"></div>
+    }
+</div>

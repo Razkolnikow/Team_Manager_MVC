@@ -49,5 +49,16 @@ namespace Team_Manager.Controllers
             TaskViewModel taskModel = this.service.GetTaskById(taskId);
             return this.View(taskModel);
         }
+
+        public ActionResult ShowTaskContent(string content)
+        {
+            return this.PartialView("_ShowTaskContent", content);
+        }
+
+        public ActionResult AllTasksOfTeam(int teamId)
+        {
+            IEnumerable<TeamTaskViewModel> teamTasks = this.service.GetAllTeamTasks(teamId);
+            return this.View(teamTasks);
+        }
     }
 }

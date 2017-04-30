@@ -2,7 +2,7 @@
 @{
     int row = 1;
 }
-<div class="bs-docs-section">
+<div class="bs-docs-section container-fluid well">
 
     <div class="row">
         <div class="col-lg-12">
@@ -32,6 +32,7 @@
                         <tr class="active menu hoverClick fredoka">
                             <td><a>@Html.ActionLink("Creator", null, null, null, null)</a></td>
                             <td><a>@Html.ActionLink("Topics", "TeamTopics", "Team", new { teamId = team.Id }, null)</a></td>
+                            <td><a>@Html.ActionLink("Tasks", "AllTasksOfTeam", "TeamTask", new { teamId = team.Id }, null)</a></td>
                             <td>@Html.ActionLink("Members", "TeamMembers", "Team", new { teamId = team.Id }, null)</td>
                             <td>@Html.ActionLink("Visit Team Page", "ShowTeam", "Team", new {teamId = team.Id}, null )</td>
                         </tr>
@@ -39,7 +40,7 @@
                     }
                     </tbody>
                 </table>
-            </div><!-- /example -->
+            </div>
         </div>
     </div>
 </div>

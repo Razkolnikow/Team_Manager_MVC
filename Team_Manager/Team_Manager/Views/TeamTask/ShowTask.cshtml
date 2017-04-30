@@ -1,11 +1,24 @@
 ﻿@model Team_Manager.Services.Data.ViewModels.TaskViewModels.TaskViewModel
+<div class="container-fluid well">
+    <h2>ShowTask</h2>
 
-<h2>ShowTask</h2>
-
-<div>
-    <h2>Task from @this.Model.TeamName</h2>
-    <input type="datetime" value="@this.Model.FinalDate" hidden="hidden" id="final-date"/>
-    <div id="getting-started" class="clock"></div>
+    <div>
+        <h2>Task from @this.Model.TeamName</h2>
+        <input type="datetime" value="@this.Model.FinalDate" hidden="hidden" id="final-date" />
+        @Ajax.ActionLink("Show Task Content",
+        "ShowTaskContent",
+        new { content = this.Model.Content },
+        new AjaxOptions
+        {
+            UpdateTargetId = "task-content",
+            InsertionMode = InsertionMode.Replace,
+            HttpMethod = "GET"
+        },
+        new { @class = "btn btn-primary" }
+        )
+        <div id="task-content"></div>
+        <div>Time Ramaining:</div>
+        <div id="getting-started" class="clock"></div>
+    </div>
 </div>
-
 

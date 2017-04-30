@@ -1,0 +1,16 @@
+﻿@model IEnumerable<Team_Manager.Services.Data.ViewModels.TaskViewModels.TeamTaskViewModel>
+    @{
+        int counter = 1;
+    }
+<div class="container-fluid well">
+    <h1 class="fredoka custom-header">Team Tasks</h1>
+
+    @foreach (var task in this.Model)
+    {
+        <div class="panel">
+            @Html.ActionLink("Task " + counter, "ShowTask", "TeamTask", new { taskId = task.Id }, new { @class = "success custom-header" })
+            <div>Assigned to @task.TeamMemberName</div>
+    </div>
+        counter++;
+    }
+</div>

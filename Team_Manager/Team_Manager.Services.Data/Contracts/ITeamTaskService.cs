@@ -13,5 +13,6 @@ namespace Team_Manager.Services.Data.Contracts
         void AssignTaskToUser(TaskBindModel model);
         IEnumerable<TaskViewModel> GetMyTasks(string currentUserId);
         TaskViewModel GetTaskById(int taskId);
+        IEnumerable<TeamTaskViewModel> GetAllTeamTasks(int teamId);
     }
 }
