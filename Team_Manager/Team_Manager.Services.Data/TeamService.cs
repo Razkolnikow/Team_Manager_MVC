@@ -122,6 +122,28 @@ namespace Team_Manager.Services.Data
             this.topics.Save();
         }
 
+        public IEnumerable<TeamMemberViewModel> GetTeamMembers(int teamId)
+        {
+            var team = this.Data.GetById(teamId);
+            IEnumerable<TeamMemberViewModel> teamMembers = 
+                team
+                .TeamMembers
+                .Select(this.MapTeamMemberViewModelToUser)
+                .ToList();
+            return teamMembers;
+        }
+
+        public IEnumerable<TopicViewModel> GetAllTeamTopics(int teamId)
+        {
+            var team = this.Data.GetById(teamId);
+            IEnumerable<TopicViewModel> topics = 
+                team
+                .Topics
+                .Select(this.MapTopicViewModelFromTopic)
+                .ToList();
+            return topics;
+        }
+
         private TopicWithCommentsViewModel MapTopicWithCommentsViewModelFromTopic(Topic topic)
         {
             var config = new MapperConfiguration(cfg =>
@@ -171,5 +193,20 @@ namespace Team_Manager.Services.Data
             var mapper = config.CreateMapper();
             return mapper.Map<TopicViewModel>(topic);
         }
+
+        public IEnumerable<TeamMemberViewModel> GetTeamMates(string currentUserId)
+        {
+            var currentUser = this.Users.GetById(currentUserId);
+            var initialMembers = currentUser.MemberTeams.SelectMany(t => t.TeamMembers)
+                .Distinct().ToList();
+            initialMembers.Remove(currentUser);
+            IEnumerable<TeamMemberViewModel> teamMembers = initialMembers
+                .Select(this.MapTeamMemberViewModelToUser)
+                .ToList();
+
+            return teamMembers;
+        }
+
+       
     }
 }

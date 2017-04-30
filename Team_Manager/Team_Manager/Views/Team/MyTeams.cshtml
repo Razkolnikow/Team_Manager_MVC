@@ -31,8 +31,8 @@
                         </tr>
                         <tr class="active menu hoverClick fredoka">
                             <td><a>@Html.ActionLink("Creator", null, null, null, null)</a></td>
-                            <td><a>@Html.ActionLink("Topics", null, null, null, null)</a></td>
-                            <td>@Html.ActionLink("Members", null, null, null, null)</td>
+                            <td><a>@Html.ActionLink("Topics", "TeamTopics", "Team", new { teamId = team.Id }, null)</a></td>
+                            <td>@Html.ActionLink("Members", "TeamMembers", "Team", new { teamId = team.Id }, null)</td>
                             <td>@Html.ActionLink("Visit Team Page", "ShowTeam", "Team", new {teamId = team.Id}, null )</td>
                         </tr>
                         row++;

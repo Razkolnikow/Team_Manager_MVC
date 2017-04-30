@@ -13,7 +13,10 @@ namespace Team_Manager
                         "~/Scripts/showMenu.js",
                         "~/Scripts/jquery.countdown.min.js",
                         "~/Scripts/CountDown.js",
-                        "~/Scripts/inviteToTeam.js"));
+                        "~/Scripts/inviteToTeam.js",
+                        "~/Scripts/jquery-ui-1.12.1.min.js",
+                        "~/Scripts/jquery-ui-1.12.1.js",
+                        "~/Scripts/date.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));
@@ -31,7 +34,8 @@ namespace Team_Manager
                       "~/Content/bootstrap.css",
                       "~/Content/Site.css",
                       "~/Content/animate.css",
-                      "~/Content/bootstrap.min.css"));
+                      "~/Content/bootstrap.min.css",
+                      "~/Content/themes/base/jquery-ui.css"));
         }
     }
 }

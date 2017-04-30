@@ -18,5 +18,8 @@ namespace Team_Manager.Services.Data.Contracts
         void AddTopic(TopicBindModel model);
         TopicWithCommentsViewModel GetTopicById(int topicId);
         void AddComment(CreateCommentBindModel model);
+        IEnumerable<TeamMemberViewModel> GetTeamMates(string currentUserId);
+        IEnumerable<TeamMemberViewModel> GetTeamMembers(int teamId);
+        IEnumerable<TopicViewModel> GetAllTeamTopics(int teamId);
     }
 }

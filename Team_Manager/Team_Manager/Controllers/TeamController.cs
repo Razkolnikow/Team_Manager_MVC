@@ -1,4 +1,5 @@
-﻿using System.Web.Mvc;
+﻿using System.Collections.Generic;
+using System.Web.Mvc;
 using Team_Manager.Services.Data.BindindModels;
 using Team_Manager.Services.Data.Contracts;
 using Team_Manager.Services.Data.ViewModels;
@@ -21,6 +22,12 @@ namespace Team_Manager.Controllers
         {
             var myTeams = this.service.GetAllTeamsOfCurrentUser(this.CurrentUserId);
             return View(myTeams);
+        }
+
+        public ActionResult MyTeamMates()
+        {
+            IEnumerable<TeamMemberViewModel> myTeamMates = this.service.GetTeamMates(this.CurrentUserId);
+            return this.View(myTeamMates);
         }
 
         
@@ -50,6 +57,19 @@ namespace Team_Manager.Controllers
             {
                 return this.RedirectToAction("CreateTopic", model.TeamId);
             }
+        }
+
+        public ActionResult TeamMembers(int teamId = 1)
+        {
+            ViewBag.TeamId = teamId;
+            IEnumerable<TeamMemberViewModel> teamMembers = this.service.GetTeamMembers(teamId);
+            return this.View(teamMembers);
+        }
+
+        public ActionResult TeamTopics(int teamId = 1)
+        {
+            IEnumerable<TopicViewModel> teamTopics = this.service.GetAllTeamTopics(teamId);
+            return this.View(teamTopics);
         }
 
         public ActionResult ShowTeamTopic(int topicId = 1)

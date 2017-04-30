@@ -153,6 +153,15 @@ textarea {
 
 }
 
+.flex-type {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-item {
+  align-self: stretch;
+}
+
 .logo {
   font-size: 1.6em;
 }

@@ -22,3 +22,4 @@ F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.M
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.addedInvitationModel.resources
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.modifiedInvitations.resources
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.addedTeamTaskModel.resources
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.taskFixes.resources

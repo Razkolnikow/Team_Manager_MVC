@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Team_Manager.Services.Data.ViewModels.TaskViewModels.TaskViewModel>
+@{
+    int counter = 1;
+}
+<h1 class="fredoka custom-header">My Tasks</h1>
+
+@foreach (var task in this.Model)
+{
+    <div class="panel">
+        @Html.ActionLink("Task " + counter, "ShowTask", "TeamTask", new { taskId = task.Id }, new { @class = "success custom-header" })
+        Final Date: @task.FinalDate
+        @Html.ActionLink("Accept", "", "")
+        @Html.ActionLink("Reject", "", "")
+    </div>
+
+
+    counter++;
+}

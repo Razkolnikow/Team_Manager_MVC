@@ -17,6 +17,8 @@ namespace Team_Manager.Data.Models
 
         public virtual ApplicationUser TeamMember { get; set; }
 
+        public virtual Team Team { get; set; }
+
         public DateTime CreatedOn { get; set; }
 
         public DateTime? ModifiedOn { get; set; }

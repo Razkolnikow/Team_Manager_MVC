@@ -74,6 +74,7 @@ namespace Team_Manager.App_Start
             kernel.Bind<ApplicationUser>().To<ApplicationUser>();
             kernel.Bind<ITeamService>().To<TeamService>();
             kernel.Bind<IUserService>().To<UserService>();
+            kernel.Bind<ITeamTaskService>().To<TeamTaskService>();
         }        
     }
 }

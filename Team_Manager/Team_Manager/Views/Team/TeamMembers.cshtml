@@ -1,0 +1,13 @@
+﻿@model IEnumerable<Team_Manager.Services.Data.ViewModels.TeamMemberViewModel>
+
+<h1 class="fredoka custom-header">Team Members</h1>
+
+@foreach (var teamMate in this.Model)
+{
+    <div class="panel flex-type">
+        @Html.ActionLink(teamMate.UserName, "UserInfo", "User", new { userId = teamMate.Id }, new { @class = "success custom-header flex-item" })
+        @Html.ActionLink("Assign Task", "AssignTask", "TeamTask", new { userId = teamMate.Id, teamId = ViewBag.TeamId }, new { @class = "success custom-header flex-item" })
+    </div>
+
+}
+

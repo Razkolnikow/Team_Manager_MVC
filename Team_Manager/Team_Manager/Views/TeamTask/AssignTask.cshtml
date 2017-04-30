@@ -1,0 +1,29 @@
+﻿@model Team_Manager.Services.Data.ViewModels.TaskViewModels.TaskViewModel
+
+@using (Html.BeginForm("AssignTask", "TeamTask", FormMethod.Post, new {@class = "form-horizontal", role = "form"}))
+{
+    @Html.AntiForgeryToken()
+    <fieldset>
+        <legend>Assing Task</legend>
+        <div class="form-group">
+            @Html.LabelFor(m => m.Content, new {@class = "control-label col-md-2" })
+            <div class="col-lg-10">
+                @Html.TextAreaFor(m => m.Content, 8, 30, new {@class = "form-control"})
+            </div>
+        </div>
+        <div class="form-group">
+            @Html.LabelFor(m => m.FinalDate, new { @class = "control-label col-md-2" })
+            <div class="col-lg-10">
+                @Html.TextBoxFor(m => m.FinalDate, new {@class = "date-picker form-control", placeholder = "Enter final date here..." })
+            </div>
+        </div>
+        <input type="hidden" value="@this.Model.TeamMemberId" name="TeamMemberId"/>
+        <input type=number hidden="hidden" value=@ViewBag.IdTeam name="TeamId"/>
+        <div class="form-group">
+            <div class="col-lg-10 col-lg-offset-2">
+                <button type="reset" class="btn btn-default">Cancel</button>
+                <button type="submit" class="btn btn-primary">Assign</button>
+            </div>
+        </div>
+    </fieldset>
+}

@@ -10,11 +10,13 @@ namespace Team_Manager.Data.Models
     {
         private ICollection<ApplicationUser> teamMembers;
         private ICollection<Topic> topics;
+        private ICollection<TeamTask> teamTasks;
 
         public Team()
         {
             this.teamMembers = new HashSet<ApplicationUser>();
             this.topics = new HashSet<Topic>();
+            this.teamTasks = new HashSet<TeamTask>();
         }
 
         [Key]
@@ -40,6 +42,12 @@ namespace Team_Manager.Data.Models
         {
             get { return this.topics; }
             set { this.topics = value; }
+        }
+
+        public virtual ICollection<TeamTask> TeamTasks
+        {
+            get { return this.teamTasks; }
+            set { this.teamTasks = value; }
         }
 
         public bool IsDeleted { get; set; }

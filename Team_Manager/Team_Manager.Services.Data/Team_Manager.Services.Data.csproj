@@ -66,11 +66,14 @@
     <Compile Include="BindindModels\CreateInvitationBindModel.cs" />
     <Compile Include="BindindModels\CreateTeamBindModel.cs" />
     <Compile Include="BindindModels\ProcessInvitationBindModel.cs" />
+    <Compile Include="BindindModels\TaskBindModel.cs" />
     <Compile Include="BindindModels\TopicBindModel.cs" />
     <Compile Include="Contracts\IBaseDataService{T}.cs" />
+    <Compile Include="Contracts\ITeamTaskService.cs" />
     <Compile Include="Contracts\ITeamService.cs" />
     <Compile Include="Contracts\IUserService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TeamTaskService.cs" />
     <Compile Include="TeamService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="ViewModels\CommentViewModel.cs" />
@@ -79,6 +82,7 @@
     <Compile Include="ViewModels\InvitaionViewModel.cs" />
     <Compile Include="ViewModels\ShowTeamViewModel.cs" />
     <Compile Include="ViewModels\SimpleTeamViewModel.cs" />
+    <Compile Include="ViewModels\TaskViewModels\TaskViewModel.cs" />
     <Compile Include="ViewModels\TeamMemberViewModel.cs" />
     <Compile Include="ViewModels\TeamViewModel.cs" />
     <Compile Include="ViewModels\TopicViewModel.cs" />

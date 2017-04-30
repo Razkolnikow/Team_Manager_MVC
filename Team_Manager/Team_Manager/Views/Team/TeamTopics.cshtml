@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Team_Manager.Services.Data.ViewModels.TopicViewModel>
+    
+<h1 class="fredoka custom-header">Team Topics</h1>
+
+@foreach (var topic in this.Model)
+{
+    <div class="panel centered-element">
+        @Html.ActionLink(topic.Title, "ShowTeamTopic", "Team", new { topicId = topic.Id }, new { @class = "success custom-header" })
+    </div>
+
+}
+
