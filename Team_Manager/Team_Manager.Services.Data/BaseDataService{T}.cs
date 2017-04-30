@@ -1,18 +1,18 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using AutoMapper;
 using Team_Manager.Data.Common;
 using Team_Manager.Data.Common.Models;
+using Team_Manager.Data.Models;
 using Team_Manager.Services.Data.Contracts;
+using Team_Manager.Services.Data.ViewModels;
 
 namespace Team_Manager.Services.Data
 {
     public abstract class BaseDataService<T> : IBaseDataService<T>
        where T : class, IDeletableEntity, IAuditInfo
     {
-        public BaseDataService(IDbRepository<T> dataSet)
+        protected BaseDataService(IDbRepository<T> dataSet)
         {
             this.Data = dataSet;
         }
@@ -55,6 +55,17 @@ namespace Team_Manager.Services.Data
         public void Dispose()
         {
             this.Data.Dispose();
+        }
+
+        protected TeamMemberViewModel MapTeamMemberViewModelToUser(ApplicationUser user)
+        {
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<ApplicationUser, TeamMemberViewModel>();
+
+            });
+            var mapper = config.CreateMapper();
+            return mapper.Map<TeamMemberViewModel>(user);
         }
     }
 }

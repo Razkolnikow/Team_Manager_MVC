@@ -8,7 +8,7 @@
     @Scripts.Render("~/bundles/modernizr")
 
 </head>
-<body>
+<body id="body">
     <div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">
             <div class="navbar-header">
@@ -21,9 +21,30 @@
             </div>
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home", new { @class = "fredoka" })</li>
-                    <li>@Html.ActionLink("About", "About", "Home", new { @class = "fredoka" })</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home", new { @class = "fredoka" })</li>
+                    <li class="dropdown fredoka">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Menu <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/user/myprofile">My Profile</a></li>
+                            <li><a href="/team/myteams">My Teams</a></li>
+                            <li><a href="/user/myinvitations">My Invitations</a></li>
+                            <li><a href="#">My Topics</a></li>
+                            <li><a href="#">My Tasks</a></li>
+                            <li><a href="#">My Teammates</a></li>
+                            <li><a href="/team/createTeam">CreateTeam</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">All Teams</a></li>
+                            <li><a href="/user/allusers">All Users</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new {@class = "fredoka"})</li>
+                    <li>@Html.ActionLink("About", "About", "Home", null, new {@class = "fredoka"})</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new {@class = "fredoka"})</li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li><a href="/administration/admin/adminhome" class="fredoka">Admin</a></li>
+                    }
                 </ul>
                 @Html.Partial("_LoginPartial")
             </div>
@@ -31,9 +52,9 @@
     </div>
     <div class="container body-content">
         @RenderBody()
-        <hr />
+        
         <footer>
-            <p>&copy; @DateTime.Now.Year - Team Manager</p>
+           
         </footer>
     </div>
 

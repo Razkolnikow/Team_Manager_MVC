@@ -1,5 +1,4 @@
-﻿using System.Web;
-using System.Web.Optimization;
+﻿using System.Web.Optimization;
 
 namespace Team_Manager
 {
@@ -10,7 +9,11 @@ namespace Team_Manager
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
-                        "~/Scripts/jquery.unobtrusive-ajax.min.js"));
+                        "~/Scripts/jquery.unobtrusive-ajax.min.js",
+                        "~/Scripts/showMenu.js",
+                        "~/Scripts/jquery.countdown.min.js",
+                        "~/Scripts/CountDown.js",
+                        "~/Scripts/inviteToTeam.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
                         "~/Scripts/jquery.validate*"));

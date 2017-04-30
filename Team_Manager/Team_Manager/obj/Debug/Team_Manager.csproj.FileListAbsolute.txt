@@ -95,3 +95,7 @@ F:\Team_Manager_MVC\Team_Manager\Team_Manager\bin\Ninject.Web.Common.xml
 F:\Team_Manager_MVC\Team_Manager\Team_Manager\bin\Ninject.Web.Mvc.xml
 F:\Team_Manager_MVC\Team_Manager\Team_Manager\bin\Team_Manager.Data.Common.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager\bin\Team_Manager.Data.Common.pdb
+F:\Team_Manager_MVC\Team_Manager\Team_Manager\bin\Team_Manager.Services.Data.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager\bin\Team_Manager.Services.Data.pdb
+F:\Team_Manager_MVC\Team_Manager\Team_Manager\bin\AutoMapper.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager\bin\AutoMapper.xml

@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
-using System.Linq;
 using System.Security.Claims;
-using System.Text;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
@@ -15,12 +13,18 @@ namespace Team_Manager.Data.Models
     {
         private ICollection<Team> createdTeams;
         private ICollection<Team> memberTeams;
+        private ICollection<Topic> topics;
+        private ICollection<Invitation> invitations;
+        private ICollection<TeamTask> teamTasks;
 
         public ApplicationUser()
         {
             this.CreatedOn = DateTime.Now;
             this.createdTeams = new HashSet<Team>();
             this.memberTeams = new HashSet<Team>();
+            this.topics = new HashSet<Topic>();
+            this.invitations = new HashSet<Invitation>();
+            this.teamTasks = new HashSet<TeamTask>();
         }
 
         [InverseProperty("Creator")]
@@ -34,6 +38,24 @@ namespace Team_Manager.Data.Models
         {
             get { return this.memberTeams; }
             set { this.memberTeams = value; }
+        }
+
+        public virtual ICollection<Topic> Topics
+        {
+            get { return this.topics; }
+            set { this.topics = value; }
+        }
+
+        public virtual ICollection<Invitation> Invitations
+        {
+            get { return this.invitations; }
+            set { this.invitations = value; }
+        }
+
+        public virtual ICollection<TeamTask> TeamTasks
+        {
+            get { return this.teamTasks; }
+            set { this.teamTasks = value; }
         }
 
         public bool IsDeleted { get; set; }

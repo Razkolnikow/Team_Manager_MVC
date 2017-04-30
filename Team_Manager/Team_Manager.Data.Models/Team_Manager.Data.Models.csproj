@@ -58,9 +58,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationUser.cs" />
+    <Compile Include="Comment.cs" />
     <Compile Include="Enums\TeamCategory.cs" />
+    <Compile Include="Invitation.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Team.cs" />
+    <Compile Include="TeamTask.cs" />
+    <Compile Include="Topic.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

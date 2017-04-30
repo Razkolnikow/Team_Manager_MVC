@@ -1,0 +1,31 @@
+﻿@model IEnumerable<Team_Manager.Services.Data.ViewModels.InvitaionViewModel>
+
+<h1>MyInvitations</h1>
+
+@foreach (var invitation in this.Model)
+{
+    <div id="invitationContainer" class="form-group fredoka panel">
+        <div class="col-lg-10">
+            You were invited to join Team @invitation.TeamName
+            <br>
+            Invitation send on @invitation.CreatedOn
+            <br>
+
+        </div>
+        @using (Html.BeginForm("AcceptInvitation", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="number" value=@invitation.Id name="invitationId" hidden="hidden"/>
+            <input type="submit" class="btn btn-default btn-success" value="Accept" />
+        }
+
+        @using (Html.BeginForm("RejectInvitation", "User", FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+            <input type="number" value=@invitation.Id name="invitationId" hidden="hidden" />
+            <input type="submit" class="btn btn-default btn-danger" value="Reject" />
+        }
+
+    </div>
+}
+

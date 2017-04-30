@@ -67,6 +67,12 @@
 ﻿body {
     padding-top: 50px;
     padding-bottom: 20px;
+
+}
+
+#body {
+  background-image: url('pics/Team.jpg');
+  background-size: cover;
 }
 
 /* Set padding to keep content from hitting the edges */
@@ -113,10 +119,74 @@ textarea {
   height: 60px;
 }
 
+#accepted {
+  opacity: 1;
+  background-image: url('pics/success.jpg');
+  background-size: cover;
+  background-position: 0px -130px;
+  height: 550px;
+  width: 100%;
+  z-index: 100;
+}
+
+#rejected {
+  opacity: 1;
+  background-image: url('pics/inAHurry.jpg');
+  background-size: cover;
+  background-position: 0px -100px;
+  height: 550px;
+  width: 100%;
+  z-index: 100;
+}
+
+.custom-header {
+  text-align: center;
+  font-size: 2em;
+}
+
+.centered-element {
+  text-align: center;
+}
+
 .body-content {
   margin-top: 80px;
+
 }
 
 .logo {
   font-size: 1.6em;
+}
+
+.opacity {
+  opacity: 0.95;
+}
+
+.opacity a {
+  opacity: 1;
+}
+
+.menu {
+  display: none;
+  position: absolute;
+}
+
+.menu-button {
+
+}
+
+.hoverClick:hover {
+  cursor: pointer;
+}
+
+.clock {
+  padding: 15px;
+	border-radius: 3px;
+	background: #00816A;
+	display: inline-block;
+  font-family: sans-serif;
+	color: #fff;
+	display: inline-block;
+	font-weight: 100;
+	text-align: center;
+	font-size: 30px;
 }

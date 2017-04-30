@@ -58,21 +58,25 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ApplicationDbContext.cs" />
-    <Compile Include="Migrations\201704261747449_InitialCreate.cs" />
-    <Compile Include="Migrations\201704261747449_InitialCreate.Designer.cs">
-      <DependentUpon>201704261747449_InitialCreate.cs</DependentUpon>
+    <Compile Include="Migrations\201704281934442_initial.cs" />
+    <Compile Include="Migrations\201704281934442_initial.Designer.cs">
+      <DependentUpon>201704281934442_initial.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704261828457_initialMigration.cs" />
-    <Compile Include="Migrations\201704261828457_initialMigration.Designer.cs">
-      <DependentUpon>201704261828457_initialMigration.cs</DependentUpon>
+    <Compile Include="Migrations\201704291937224_modelsFixes.cs" />
+    <Compile Include="Migrations\201704291937224_modelsFixes.Designer.cs">
+      <DependentUpon>201704291937224_modelsFixes.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704261900250_modelsFix.cs" />
-    <Compile Include="Migrations\201704261900250_modelsFix.Designer.cs">
-      <DependentUpon>201704261900250_modelsFix.cs</DependentUpon>
+    <Compile Include="Migrations\201704301117126_addedInvitationModel.cs" />
+    <Compile Include="Migrations\201704301117126_addedInvitationModel.Designer.cs">
+      <DependentUpon>201704301117126_addedInvitationModel.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\201704261929255_addedModels.cs" />
-    <Compile Include="Migrations\201704261929255_addedModels.Designer.cs">
-      <DependentUpon>201704261929255_addedModels.cs</DependentUpon>
+    <Compile Include="Migrations\201704301139473_modifiedInvitations.cs" />
+    <Compile Include="Migrations\201704301139473_modifiedInvitations.Designer.cs">
+      <DependentUpon>201704301139473_modifiedInvitations.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201704301315369_addedTeamTaskModel.cs" />
+    <Compile Include="Migrations\201704301315369_addedTeamTaskModel.Designer.cs">
+      <DependentUpon>201704301315369_addedTeamTaskModel.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,17 +96,20 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201704261747449_InitialCreate.resx">
-      <DependentUpon>201704261747449_InitialCreate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704281934442_initial.resx">
+      <DependentUpon>201704281934442_initial.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704261828457_initialMigration.resx">
-      <DependentUpon>201704261828457_initialMigration.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704291937224_modelsFixes.resx">
+      <DependentUpon>201704291937224_modelsFixes.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704261900250_modelsFix.resx">
-      <DependentUpon>201704261900250_modelsFix.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704301117126_addedInvitationModel.resx">
+      <DependentUpon>201704301117126_addedInvitationModel.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201704261929255_addedModels.resx">
-      <DependentUpon>201704261929255_addedModels.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201704301139473_modifiedInvitations.resx">
+      <DependentUpon>201704301139473_modifiedInvitations.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201704301315369_addedTeamTaskModel.resx">
+      <DependentUpon>201704301315369_addedTeamTaskModel.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

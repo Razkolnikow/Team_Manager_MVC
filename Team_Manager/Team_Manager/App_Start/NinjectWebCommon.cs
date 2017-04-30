@@ -1,4 +1,7 @@
 using System.Data.Entity;
+using Team_Manager.Data.Common;
+using Team_Manager.Services.Data;
+using Team_Manager.Services.Data.Contracts;
 
 [assembly: WebActivatorEx.PreApplicationStartMethod(typeof(Team_Manager.App_Start.NinjectWebCommon), "Start")]
 [assembly: WebActivatorEx.ApplicationShutdownMethodAttribute(typeof(Team_Manager.App_Start.NinjectWebCommon), "Stop")]
@@ -13,6 +16,7 @@ namespace Team_Manager.App_Start
     using Ninject;
     using Ninject.Web.Common;
     using Data;
+    using Data.Models;
 
     public static class NinjectWebCommon 
     {
@@ -65,9 +69,11 @@ namespace Team_Manager.App_Start
         private static void RegisterServices(IKernel kernel)
         {
             kernel.Bind<ApplicationDbContext>().To<ApplicationDbContext>().InRequestScope();
-            kernel.Bind<DbContext>().To<ApplicationDbContext>();
-
-
+            kernel.Bind<DbContext>().To<ApplicationDbContext>().InRequestScope();
+            kernel.Bind(typeof(IDbRepository<>)).To(typeof(DbRepository<>));
+            kernel.Bind<ApplicationUser>().To<ApplicationUser>();
+            kernel.Bind<ITeamService>().To<TeamService>();
+            kernel.Bind<IUserService>().To<UserService>();
         }        
     }
 }

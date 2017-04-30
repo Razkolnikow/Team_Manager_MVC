@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-using Microsoft.AspNet.Identity.EntityFramework;
-using Team_Manager.Data;
+﻿using System.Web.Mvc;
 
 namespace Team_Manager.Controllers
 {
@@ -13,10 +7,6 @@ namespace Team_Manager.Controllers
     {
         public ActionResult Index()
         {
-            using (var context = new ApplicationDbContext())
-            {
-                context.Roles.Add(new IdentityRole("Admin"));
-            }
             return View();
         }
 

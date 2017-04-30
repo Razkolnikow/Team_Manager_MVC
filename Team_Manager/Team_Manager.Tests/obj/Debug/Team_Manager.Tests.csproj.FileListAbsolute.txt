@@ -59,3 +59,14 @@ F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\EntityFramework.xm
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.xml
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\obj\Debug\Team_Manager.Tests.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\obj\Debug\Team_Manager.Tests.pdb
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\WebActivatorEx.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.Services.Data.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Ninject.Web.Common.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Ninject.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.Data.Common.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\AutoMapper.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.Services.Data.pdb
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Ninject.Web.Common.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Ninject.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.Data.Common.pdb
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\AutoMapper.xml

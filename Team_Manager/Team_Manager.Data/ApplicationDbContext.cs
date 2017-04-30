@@ -14,6 +14,16 @@ namespace Team_Manager.Data
         {
         }
 
+        public IDbSet<Team> Teams { get; set; }
+
+        public IDbSet<Topic> Topics { get; set; }
+
+        public IDbSet<Comment> Comments { get; set; }
+
+        public IDbSet<Invitation> Invitations { get; set; }
+
+        public IDbSet<TeamTask> TeamTasks { get; set; }
+
         public static ApplicationDbContext Create()
         {
             return new ApplicationDbContext();

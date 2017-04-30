@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Team_Manager.Data.Models.Enums
+﻿namespace Team_Manager.Data.Models.Enums
 {
     public enum TeamCategory
     {

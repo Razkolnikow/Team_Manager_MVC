@@ -14,10 +14,11 @@ F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\bin\Debug\Microsoft.AspNet.Id
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.csprojResolveAssemblyReference.cache
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.pdb
-F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.InitialCreate.resources
-F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.csproj.GenerateResource.Cache
-F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.initialMigration.resources
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\bin\Debug\Team_Manager.Data.Common.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\bin\Debug\Team_Manager.Data.Common.pdb
-F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.modelsFix.resources
-F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.addedModels.resources
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.initial.resources
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.csproj.GenerateResource.Cache
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.modelsFixes.resources
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.addedInvitationModel.resources
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.modifiedInvitations.resources
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Data\obj\Debug\Team_Manager.Data.Migrations.addedTeamTaskModel.resources

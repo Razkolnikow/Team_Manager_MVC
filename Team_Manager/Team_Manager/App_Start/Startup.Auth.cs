@@ -3,11 +3,9 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
-using Microsoft.Owin.Security.Google;
 using Owin;
 using Team_Manager.Data;
 using Team_Manager.Data.Models;
-using Team_Manager.Models;
 
 namespace Team_Manager
 {

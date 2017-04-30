@@ -1,0 +1,10 @@
+﻿@using Team_Manager.Services.Data.ViewModels;
+@model IEnumerable<TeamMemberViewModel>
+<h2>AllUsers</h2>
+@foreach (var user in this.Model)
+{
+    @Html.ActionLink(user.UserName, "UserInfo", "User", new {userId = user.Id}, null)
+    <br/>
+}
+
+
