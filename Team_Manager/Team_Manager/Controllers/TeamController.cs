@@ -36,9 +36,19 @@ namespace Team_Manager.Controllers
             return this.View();
         }
 
-        public ActionResult CreateTopic(int teamId = 1)
+        public ActionResult CreateTopic(int? teamId)
         {
-            CreateTopicViewModel createTopicViewModel = this.service.GetCreateTopicViewModel(teamId);
+            if (!this.IsValidObject(teamId))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
+            CreateTopicViewModel createTopicViewModel = this.service.GetCreateTopicViewModel(teamId.Value);
+            if (!this.IsValidObject(createTopicViewModel))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
             createTopicViewModel.AuthorName = User.Identity.Name;
             return this.View(createTopicViewModel);
         }
@@ -55,20 +65,20 @@ namespace Team_Manager.Controllers
             }
             else
             {
-                return this.RedirectToAction("CreateTopic", model.TeamId);
+                return this.RedirectToAction("CreateTopic",new {teamId = model.TeamId});
             }
         }
 
         public ActionResult TeamMembers(int? teamId)
         {
-            if (!this.IsValidParameter(teamId))
+            if (!this.IsValidObject(teamId))
             {
                 return this.RedirectToAction("MyTeams");
             }
 
             ViewBag.TeamId = teamId.Value;
             IEnumerable<TeamMemberViewModel> teamMembers = this.service.GetTeamMembers(teamId.Value);
-            if (!this.IsValidParameter(teamMembers))
+            if (!this.IsValidObject(teamMembers))
             {
                 return this.RedirectToAction("MyTeams");
             }
@@ -78,13 +88,13 @@ namespace Team_Manager.Controllers
 
         public ActionResult TeamTopics(int? teamId)
         {
-            if (!this.IsValidParameter(teamId))
+            if (!this.IsValidObject(teamId))
             {
                 return this.RedirectToAction("MyTeams");
             }
 
             IEnumerable<TopicViewModel> teamTopics = this.service.GetAllTeamTopics(teamId.Value);
-            if (!this.IsValidParameter(teamTopics))
+            if (!this.IsValidObject(teamTopics))
             {
                 return this.RedirectToAction("MyTeams");
             }
@@ -94,13 +104,13 @@ namespace Team_Manager.Controllers
 
         public ActionResult ShowTeamTopic(int? topicId)
         {
-            if (!this.IsValidParameter(topicId))
+            if (!this.IsValidObject(topicId))
             {
                 return this.RedirectToAction("MyTeams");
             }
 
             TopicWithCommentsViewModel model = this.service.GetTopicById(topicId.Value);
-            if (!this.IsValidParameter(model))
+            if (!this.IsValidObject(model))
             {
                 return this.RedirectToAction("MyTeams");
             }
@@ -115,13 +125,13 @@ namespace Team_Manager.Controllers
 
         public ActionResult ShowTeam(int? teamId)
         {
-            if (!this.IsValidParameter(teamId))
+            if (!this.IsValidObject(teamId))
             {
                 return this.RedirectToAction("MyTeams");
             }
 
             ShowTeamViewModel teamViewModel = this.service.GetShowTeamViewModel(teamId.Value);
-            if (!this.IsValidParameter(teamViewModel))
+            if (!this.IsValidObject(teamViewModel))
             {
                 return this.RedirectToAction("MyTeams");
             }
@@ -151,7 +161,7 @@ namespace Team_Manager.Controllers
                 return this.Redirect("/team/myTeams");
             }
 
-            return this.View("CreateTeam");
+            return this.View();
         }
     }
 }

@@ -100,7 +100,7 @@ namespace Team_Manager.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteTask(int? taskId)
         {
-            if (!this.IsValidParameter(taskId))
+            if (!this.IsValidObject(taskId))
             {
                 return this.RedirectToAction("MyTasks");
             }

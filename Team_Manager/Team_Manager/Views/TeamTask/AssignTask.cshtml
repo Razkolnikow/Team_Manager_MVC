@@ -9,8 +9,8 @@
             <div class="form-group">
                 @Html.LabelFor(m => m.Content, new { @class = "control-label col-md-2" })
                 <div class="col-lg-10">
-                    @Html.TextAreaFor(m => m.Content, 8, 30, new { @class = "form-control" })
-                    
+                    @Html.ValidationMessageFor(m => m.Content)
+                    @Html.TextAreaFor(m => m.Content, 8, 30, new {@class = "form-control"})
                 </div>
             </div>
             <div class="form-group">

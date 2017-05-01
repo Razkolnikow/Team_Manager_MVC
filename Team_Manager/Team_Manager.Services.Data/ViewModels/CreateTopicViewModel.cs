@@ -7,7 +7,8 @@ namespace Team_Manager.Services.Data.ViewModels
     {
         public TeamViewModel TeamViewModel { get; set; }
 
-        [StringLength(200)]
+        //[StringLength(200)]
+        [Required]
         public string Title { get; set; }
         
         public string AuthorName { get; set; }

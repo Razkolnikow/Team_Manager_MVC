@@ -7,7 +7,7 @@ namespace Team_Manager.Controllers
     {
         protected string CurrentUserId => User.Identity.GetUserId();
 
-        protected bool IsValidParameter(object parameter)
+        protected bool IsValidObject(object parameter)
         {
             if (parameter == null)
             {

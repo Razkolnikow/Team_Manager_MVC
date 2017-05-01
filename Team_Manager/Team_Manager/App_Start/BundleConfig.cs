@@ -10,12 +10,14 @@ namespace Team_Manager
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js",
                         "~/Scripts/jquery.unobtrusive-ajax.min.js",
+                        "~/Scripts/jquery.validate.min.js",
+                        "~/Scripts/jquery.validate.min.js",
                         "~/Scripts/showMenu.js",
                         "~/Scripts/jquery.countdown.min.js",
                         "~/Scripts/CountDown.js",
                         "~/Scripts/inviteToTeam.js",
                         "~/Scripts/jquery-ui-1.12.1.min.js",
-                        "~/Scripts/jquery-ui-1.12.1.js",
+                        "~/Scripts/jquery.validate.unobtrusive.min.js",
                         "~/Scripts/date.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(

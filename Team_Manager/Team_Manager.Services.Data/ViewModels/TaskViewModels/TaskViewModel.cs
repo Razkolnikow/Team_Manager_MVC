@@ -11,7 +11,7 @@ namespace Team_Manager.Services.Data.ViewModels.TaskViewModels
     {
         public int Id { get; set; }
 
-        [Required]
+        [Required(ErrorMessage = "The content field is required and can not be longer than 200 characters!")]
         [StringLength(200)]
         public string Content { get; set; }
 

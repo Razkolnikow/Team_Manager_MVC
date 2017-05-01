@@ -55,6 +55,11 @@ namespace Team_Manager.Services.Data
         public UserDetailsViewModel GetUserDetailsViewModel(string userId)
         {
             var user = this.Data.GetById(userId);
+            if (user == null)
+            {
+                return null;
+            }
+
             UserDetailsViewModel model = new UserDetailsViewModel
             {
                 Id = user.Id,
@@ -78,6 +83,11 @@ namespace Team_Manager.Services.Data
         public TeamDetailsVIewModel GetTeamDetailsViewModel(int teamId)
         {
             var team = this.teams.GetById(teamId);
+            if (team == null)
+            {
+                return null;
+            }
+
             TeamDetailsVIewModel model = MapTeamDetailsFromTeam(team);
             return model;
         }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Web.Mvc;
+using Team_Manager.Controllers;
 using Team_Manager.Services.Data.BindindModels.AdminBindingModels;
 using Team_Manager.Services.Data.Contracts;
 using Team_Manager.Services.Data.ViewModels.AdminViewModels;
@@ -8,7 +9,7 @@ namespace Team_Manager.Areas.Administration.Controllers
 {
     [Authorize(Roles = "Admin")]
     [Route("Admin/{action}")]
-    public class AdminController : Controller
+    public class AdminController : BaseController
     {
         private IAdminService service;
 
@@ -31,6 +32,11 @@ namespace Team_Manager.Areas.Administration.Controllers
         public ActionResult ShowUserInfo(string userId)
         {
             UserDetailsViewModel model = this.service.GetUserDetailsViewModel(userId);
+            if (! this.IsValidObject(model))
+            {
+                return this.RedirectToAction("AllUsers");
+            }
+
             return this.View(model);
         }
         
@@ -40,9 +46,19 @@ namespace Team_Manager.Areas.Administration.Controllers
             return this.View(teams);
         }
 
-        public ActionResult ShowTeamInfo(int teamId)
+        public ActionResult ShowTeamInfo(int? teamId)
         {
-            TeamDetailsVIewModel model = this.service.GetTeamDetailsViewModel(teamId);
+            if (! this.IsValidObject(teamId))
+            {
+                return this.RedirectToAction("AllTeams");
+            }
+
+            TeamDetailsVIewModel model = this.service.GetTeamDetailsViewModel(teamId.Value);
+            if (!this.IsValidObject(model))
+            {
+                return this.RedirectToAction("AllTeams");
+            }
+
             return this.View(model);
         }
 

@@ -1,4 +1,6 @@
-﻿<div class="container-fluid well">
+﻿@model Team_Manager.Services.Data.BindindModels.CreateTeamBindModel
+
+<div class="container-fluid well">
     <div class="row">
         <div class="col-lg-6">
             <div class="well bs-component">
@@ -8,9 +10,10 @@
                     <fieldset>
                         <legend>Create Team</legend>
                         <div class="form-group">
-                            <label for="teamName" class="col-lg-2 control-label">Name</label>
+                            @Html.LabelFor(m => m.Name, new { @class = "control-label col-lg-2"})
                             <div class="col-lg-10">
-                                <input type="text" name="Name" class="form-control" id="teamName" placeholder="Team Name">
+                                @Html.TextBoxFor(m => m.Name, new {@class = "form-control", placeholder = "Team Name"})
+                                @Html.ValidationSummary()
                             </div>
                         </div>
                         <div class="form-group">
