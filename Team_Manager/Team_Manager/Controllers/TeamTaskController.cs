@@ -47,7 +47,6 @@ namespace Team_Manager.Controllers
         
         public ActionResult AcceptTask(int taskId)
         {
-            
             return this.View(taskId);
         }
 
@@ -86,7 +85,18 @@ namespace Team_Manager.Controllers
         public ActionResult AllTasksOfTeam(int teamId)
         {
             IEnumerable<TeamTaskViewModel> teamTasks = this.service.GetAllTeamTasks(teamId);
+            string creatorId = this.service.GetTeamCreatorId(teamId);
+            ViewBag.CreatorId = creatorId;
+            ViewBag.CurrentUserId = this.CurrentUserId;
             return this.View(teamTasks);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult DeleteTask(int taskId)
+        {
+            int teamId = this.service.DeleteTask(taskId);
+            return this.RedirectToAction("AllTasksOfTeam", new {teamId = teamId});
         }
     }
 }

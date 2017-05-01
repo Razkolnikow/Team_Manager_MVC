@@ -1,7 +1,13 @@
-﻿@{
-    ViewBag.Title = "Home Page";
-}
-
-@*<div id="getting-started" class="clock"></div>*@
+﻿
+<div class="container-fluid well">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h1 class="text-center">Welcome, @User.Identity.Name!</h1>
+    }
+    else
+    {
+        <h1 class="text-center">Welcome!</h1>
+    }
+</div>
 
 

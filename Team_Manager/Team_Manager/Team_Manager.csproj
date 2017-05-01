@@ -290,6 +290,11 @@
     <Content Include="Areas\Administration\Views\_ViewStart.cshtml" />
     <Content Include="Areas\Administration\Views\Shared\_Layout.cshtml" />
     <Content Include="Areas\Administration\Views\Admin\AdminHome.cshtml" />
+    <Content Include="Areas\Administration\Views\Admin\AllUsers.cshtml" />
+    <Content Include="Areas\Administration\Views\Admin\ShowUserInfo.cshtml" />
+    <Content Include="Areas\Administration\Views\Admin\AllTeams.cshtml" />
+    <Content Include="Areas\Administration\Views\Admin\ShowTeamInfo.cshtml" />
+    <Content Include="Areas\Administration\Views\Admin\DeleteTeam.cshtml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\CountDown.js" />
     <Content Include="Scripts\date.js" />
@@ -371,6 +376,8 @@
     <Content Include="Views\TeamTask\_ShowTaskContent.cshtml" />
     <Content Include="Views\TeamTask\AcceptTask.cshtml" />
     <Content Include="Views\TeamTask\RejectTask.cshtml" />
+    <Content Include="Views\Shared\_CustomLayout.cshtml" />
+    <Content Include="Views\Shared\_ContactLayout.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

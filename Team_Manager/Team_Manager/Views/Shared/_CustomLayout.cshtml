@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Team Manager</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+</head>
+<body id="custom-body">
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                @Html.ActionLink("Team Manager", "Index", "Home", new { area = "" }, new { @class = "navbar-brand fredoka logo" })
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="dropdown fredoka">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                            Menu <span class="caret"></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="/user/myprofile">My Profile</a></li>
+                            <li><a href="/team/myteams">My Teams</a></li>
+                            <li><a href="/user/myinvitations">My Invitations</a></li>
+                            <li><a href="#">My Topics</a></li>
+                            <li><a href="/teamtask/mytasks">My Tasks</a></li>
+                            <li><a href="/team/myteammates">My Teammates</a></li>
+                            <li><a href="/team/createTeam">CreateTeam</a></li>
+                            <li class="divider"></li>
+                            <li><a href="#">All Teams</a></li>
+                            <li><a href="/user/allusers">All Users</a></li>
+                        </ul>
+                    </li>
+                    <li>@Html.ActionLink("Home", "Index", "Home", null, new { @class = "fredoka" })</li>
+                    <li>@Html.ActionLink("About", "About", "Home", null, new { @class = "fredoka" })</li>
+                    <li>@Html.ActionLink("Contact", "Contact", "Home", null, new { @class = "fredoka" })</li>
+                    @if (User.IsInRole("Admin"))
+                    {
+                        <li><a href="/administration/admin/adminhome" class="fredoka">Admin</a></li>
+                    }
+                </ul>
+                @Html.Partial("_LoginPartial")
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+        @RenderBody()
+
+        <footer></footer>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
+

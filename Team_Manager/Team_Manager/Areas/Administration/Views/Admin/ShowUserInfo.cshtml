@@ -1,0 +1,14 @@
+﻿@model Team_Manager.Services.Data.ViewModels.AdminViewModels.UserDetailsViewModel
+
+<div class="container-fluid well">
+    <h3 class="text-center">Username: @this.Model.UserName</h3>
+    <h3 class="text-center">Email: @this.Model.EmailAdress</h3>
+    <h3 class="text-center">Registered on: @this.Model.RegisteredOn</h3>
+    <h3 class="text-center">Member in Teams:</h3>
+    @foreach (var team in this.Model.Teams)
+    {
+        <h3 class="text-center">
+            @Html.ActionLink(team.TeamName, "ShowTeamInfo", "Admin", new {area = "Administration", teamId = team.Id}, null)
+        </h3>
+    }
+</div>

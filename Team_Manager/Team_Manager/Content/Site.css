@@ -75,6 +75,16 @@
   background-size: cover;
 }
 
+#custom-body {
+  background-image: url('pics/team2.jpg');
+  background-size: cover;
+}
+
+#contact-body {
+  background-image: url('pics/team3.jpg');
+  background-size: cover;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -153,6 +163,10 @@ textarea {
 
 }
 
+.about {
+  padding: 20px;
+}
+
 .flex-type {
   display: flex;
   justify-content: space-around;
@@ -174,6 +188,32 @@ textarea {
   opacity: 1;
 }
 
+.admin-style-link {
+  padding: 10px;
+  font-size: 1.7em;
+}
+
+.admin-style-link:hover {
+  background-color: rgba(5, 75, 254, 0.6);
+  color: black;
+  border-radius: 20px;
+  text-decoration: none;
+}
+
+#admin-user-container {
+  padding: 12px;
+  background-color: rgba(29, 71, 75, 0.21);
+}
+
+#admin-user-container:hover {
+  background-color: rgba(65, 65, 68, 0.09);
+}
+
+#admin {
+  background-image: url('pics/admin.jpg');
+  background-size: cover;
+}
+
 .overflow {
   word-wrap: break-word;
   word-break: break-all;
@@ -189,6 +229,24 @@ textarea {
 
 .menu-button {
 
+}
+
+.text-container {
+  padding: 10px;
+  border-radius: 10px;
+
+}
+
+.team-name {
+  font-size: 1.7em;
+}
+
+#custom-background {
+  background-color: rgb(150, 156, 164);
+}
+
+#custom-background:hover {
+  background-color: rgb(97, 154, 221);
 }
 
 .hoverClick:hover {

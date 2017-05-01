@@ -1,21 +1,21 @@
 ﻿@using Microsoft.AspNet.Identity
 @model Team_Manager.Services.Data.ViewModels.TeamManagerUserViewModel
 <div class="container-fluid well">
-    <h2>User Information</h2>
+    <h2 class="panel text-center text-container" id="custom-background">User Information</h2>
 
-    <h1>@this.Model.UserName</h1>
+    <h2 class="panel text-center text-container">UserName: @this.Model.UserName</h2>
     <div>
-        <h2>Teams: </h2>
+        <h2 class="panel text-center text-container">Teams: </h2>
         @foreach (var teamName in this.Model.TeamNames)
         {
-            <div>@teamName</div>
+            <div class="text-center team-name">@teamName</div>
         }
     </div>
 
     <div>
         @if (this.Model.Id != User.Identity.GetUserId())
         {
-            <input type="button" value="Invite to team" id="team-add-button" class="success" />
+            <input type="button" value="Invite to team" id="team-add-button" class="btn btn-default btn-success" />
             <input type="hidden" value="@this.Model.Id" id="user-id" />
             <div id="add-to-team-form">
                 

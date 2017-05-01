@@ -1,0 +1,16 @@
+﻿@model Team_Manager.Services.Data.ViewModels.AdminViewModels.TeamDetailsVIewModel
+
+<div class="container-fluid well">
+    <h3 class="text-center">Team Name: @this.Model.Name</h3>
+    <h3 class="text-center">@Html.ActionLink("Delete Team", "DeleteTeam", "Admin", new { area = "Administration", teamId = this.Model.Id }, new { @class = "btn btn-default btn-danger" })</h3>
+    <h3 class="text-center">Created on: @this.Model.CreatedOn</h3>
+    <h3 class="text-center">Created by: @this.Model.CreatedBy</h3>
+    <h3 class="text-center">Members in Team:</h3>
+    @foreach (var member in this.Model.Members)
+    {
+        <h3 class="text-center">
+            @Html.ActionLink(member.UserName, "ShowUserInfo", "Admin", new { area = "Administration", userId = member.Id }, null)
+        </h3>
+    }
+</div>
+

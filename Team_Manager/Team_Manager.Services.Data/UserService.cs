@@ -38,7 +38,10 @@ namespace Team_Manager.Services.Data
             TeamManagerUserViewModel model = new TeamManagerUserViewModel()
             {
                 Id = user.Id,
-                TeamNames = user.MemberTeams.Select(t => t.Name).ToArray(),
+                TeamNames = user.MemberTeams
+                .Where(t => !t.IsDeleted)
+                .Select(t => t.Name)
+                .ToArray(),
                 UserName = user.UserName
             };
 
@@ -50,6 +53,7 @@ namespace Team_Manager.Services.Data
             var currentUser = this.Data.GetById(currentUserId);
             IEnumerable<SimpleTeamViewModel> currentUserTeams = currentUser
                 .MemberTeams
+                .Where(t => !t.IsDeleted)
                 .Select(MapSimpleTeamViewModelFromTeam)
                 .ToList();
 
@@ -77,7 +81,7 @@ namespace Team_Manager.Services.Data
         {
             var targetedUser = this.Data.GetById(model.TargetedUserId);
             var sender = this.Data.GetById(model.SenderId);
-            var team = sender.MemberTeams.FirstOrDefault(t => t.Id == model.TeamId);
+            var team = sender.MemberTeams.Where(t => !t.IsDeleted).FirstOrDefault(t => t.Id == model.TeamId);
 
             Invitation invitation = new Invitation()
             {

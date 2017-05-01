@@ -1,0 +1,12 @@
+﻿@model IEnumerable<Team_Manager.Services.Data.ViewModels.AdminViewModels.TeamAdminViewModel>
+
+<div class="container-fluid well">
+    <h1 class="text-center">All Teams</h1>
+    @foreach (var team in this.Model)
+    {
+        <div class="panel centered-element" id="admin-user-container">
+            @Html.ActionLink(team.TeamName, "ShowTeamInfo", "Admin", new { teamId = team.Id }, new { @class = "admin-style-link" })
+        </div>
+    }
+</div>
+

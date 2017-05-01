@@ -3,7 +3,7 @@
 namespace Team_Manager.Controllers
 {
     [Route("Home/{action}")]
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         public ActionResult Index()
         {

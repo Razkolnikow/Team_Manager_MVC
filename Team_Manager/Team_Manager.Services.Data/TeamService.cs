@@ -45,7 +45,7 @@ namespace Team_Manager.Services.Data
         public IEnumerable<TeamViewModel> GetAllTeamsOfCurrentUser(string currentUserId)
         {
             var currentUser = this.GetCurrentUser(currentUserId);
-            var teams = currentUser.MemberTeams.Select(MapTeamViewModelFromTeam).ToList();
+            var teams = currentUser.MemberTeams.Where(t => !t.IsDeleted).Select(MapTeamViewModelFromTeam).ToList();
             return teams;
         }
 
@@ -197,7 +197,9 @@ namespace Team_Manager.Services.Data
         public IEnumerable<TeamMemberViewModel> GetTeamMates(string currentUserId)
         {
             var currentUser = this.Users.GetById(currentUserId);
-            var initialMembers = currentUser.MemberTeams.SelectMany(t => t.TeamMembers)
+            var initialMembers = currentUser.MemberTeams
+                .Where(team => !team.IsDeleted)
+                .SelectMany(t => t.TeamMembers)
                 .Distinct().ToList();
             initialMembers.Remove(currentUser);
             IEnumerable<TeamMemberViewModel> teamMembers = initialMembers

@@ -19,7 +19,17 @@
                 <div class="glyphicon glyphicon-remove">Rejected</div>
                 <div>Rejection reason: @task.RejectionReason</div>
             }
-    </div>
+            
+            @if (ViewBag.CreatorId == ViewBag.CurrentUserId)
+            {
+                using (Html.BeginForm("DeleteTask", "TeamTask", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <input type="number" value=@task.Id hidden="hidden" name="taskId"/>
+                    <input type="submit" value="Delete task" class="btn btn-default btn-danger"/>
+                }
+            }
+        </div>
         counter++;
     }
 </div>

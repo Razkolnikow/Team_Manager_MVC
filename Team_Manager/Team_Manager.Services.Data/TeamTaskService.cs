@@ -58,7 +58,7 @@ namespace Team_Manager.Services.Data
         public IEnumerable<TeamTaskViewModel> GetAllTeamTasks(int teamId)
         {
             var team = this.teams.GetById(teamId);
-            IEnumerable<TeamTaskViewModel> teamTasks = team.TeamTasks.Select(t => new TeamTaskViewModel()
+            IEnumerable<TeamTaskViewModel> teamTasks = team.TeamTasks.Where(t => !t.IsDeleted).Select(t => new TeamTaskViewModel()
             {
                 Id = t.Id,
                 TeamMemberName = t.TeamMember.UserName,
@@ -83,6 +83,21 @@ namespace Team_Manager.Services.Data
             task.IsRejected = true;
             task.RejectionReason = model.RejectionReason;
             this.Data.Save();
+        }
+
+        public string GetTeamCreatorId(int teamId)
+        {
+            string creatorId = this.teams.GetById(teamId).Creator.Id;
+            return creatorId;
+        }
+
+        public int DeleteTask(int taskId)
+        {
+            var task = this.Data.GetById(taskId);
+            int teamId = task.Team.Id;
+            this.Data.Delete(task);
+            this.Data.Save();
+            return teamId;
         }
 
         private TaskViewModel MapTaskViewModelFromTeamTask(TeamTask task)

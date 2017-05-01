@@ -1,0 +1,13 @@
+﻿@model Int32
+    
+<div class="container-fluid well">
+    <h3 class="text-center">Are you sure you want to delete this team?</h3>
+    @using (Html.BeginForm("DeleteTeam", "Admin", new {area = "Administration"}, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <input type="number" hidden="hidden" value=@this.Model name="teamId"/>
+        <input type="submit" value="Yes" class="btn btn-default btn-danger"/>
+        @Html.ActionLink("No", "AllTeams", "Admin", null, new {@class = "btn btn-default btn-success"})
+    }
+</div>
+

@@ -16,5 +16,7 @@ namespace Team_Manager.Services.Data.Contracts
         IEnumerable<TeamTaskViewModel> GetAllTeamTasks(int teamId);
         void AcceptTask(int taskId);
         void RejectTask(RejectTaskBindModel model);
+        string GetTeamCreatorId(int teamId);
+        int DeleteTask(int taskId);
     }
 }

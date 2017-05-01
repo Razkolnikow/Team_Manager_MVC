@@ -61,8 +61,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AdminService.cs" />
     <Compile Include="BaseDataService{T}.cs" />
     <Compile Include="BindindModels\AcceptTaskBindModel.cs" />
+    <Compile Include="BindindModels\AdminBindingModels\DeleteTeamBindModel.cs" />
     <Compile Include="BindindModels\RejectTaskBindModel.cs" />
     <Compile Include="BindindModels\CreateCommentBindModel.cs" />
     <Compile Include="BindindModels\CreateInvitationBindModel.cs" />
@@ -70,6 +72,7 @@
     <Compile Include="BindindModels\ProcessInvitationBindModel.cs" />
     <Compile Include="BindindModels\CreateTaskBindModel.cs" />
     <Compile Include="BindindModels\TopicBindModel.cs" />
+    <Compile Include="Contracts\IAdminService.cs" />
     <Compile Include="Contracts\IBaseDataService{T}.cs" />
     <Compile Include="Contracts\ITeamTaskService.cs" />
     <Compile Include="Contracts\ITeamService.cs" />
@@ -78,6 +81,10 @@
     <Compile Include="TeamTaskService.cs" />
     <Compile Include="TeamService.cs" />
     <Compile Include="UserService.cs" />
+    <Compile Include="ViewModels\AdminViewModels\TeamAdminViewModel.cs" />
+    <Compile Include="ViewModels\AdminViewModels\TeamDetailsVIewModel.cs" />
+    <Compile Include="ViewModels\AdminViewModels\UserAdminViewModel.cs" />
+    <Compile Include="ViewModels\AdminViewModels\UserDetailsViewModel.cs" />
     <Compile Include="ViewModels\CommentViewModel.cs" />
     <Compile Include="ViewModels\CreateTopicViewModel.cs" />
     <Compile Include="ViewModels\CurrentUserTeamsViewModel.cs" />
