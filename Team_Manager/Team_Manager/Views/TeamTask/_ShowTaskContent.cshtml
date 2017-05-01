@@ -1,7 +1,7 @@
 ﻿@model string
 
 <div class="panel overflow text-primary content-container">
-    @this.Model
+    @Html.Encode(this.Model)
 </div>
 
 

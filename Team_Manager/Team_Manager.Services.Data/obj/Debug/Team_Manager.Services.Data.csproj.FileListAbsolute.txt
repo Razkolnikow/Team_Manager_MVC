@@ -18,3 +18,16 @@ F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\EntityFram
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\EntityFramework.SqlServer.xml
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\AutoMapper.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\AutoMapper.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\Microsoft.Web.Infrastructure.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.Helpers.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.Mvc.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.Razor.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.WebPages.Deployment.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.WebPages.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.WebPages.Razor.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.Helpers.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.Mvc.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.Razor.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.WebPages.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.WebPages.Deployment.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Services.Data\bin\Debug\System.Web.WebPages.Razor.xml

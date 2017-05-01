@@ -4,6 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Web.Mvc;
 
 namespace Team_Manager.Services.Data.ViewModels.TaskViewModels
 {
@@ -13,6 +14,7 @@ namespace Team_Manager.Services.Data.ViewModels.TaskViewModels
 
         [Required(ErrorMessage = "The content field is required and can not be longer than 200 characters!")]
         [StringLength(200)]
+        [AllowHtml]
         public string Content { get; set; }
 
         public string TeamName { get; set; }

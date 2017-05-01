@@ -26,6 +26,7 @@ namespace Team_Manager.Services.Data
 
         public void CreateTeam(CreateTeamBindModel model, string currentUserId)
         {
+
             var creator = this.GetCurrentUser(currentUserId);
             Team team = new Team()
             {
