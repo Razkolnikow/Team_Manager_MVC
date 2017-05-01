@@ -17,6 +17,14 @@ namespace Team_Manager.Data.Models
 
         public virtual ApplicationUser TeamMember { get; set; }
 
+        //Added
+        public bool IsAccepted { get; set; }
+
+        //Added
+        public bool IsRejected { get; set; }
+
+        public string RejectionReason { get; set; }
+
         public virtual Team Team { get; set; }
 
         public DateTime CreatedOn { get; set; }

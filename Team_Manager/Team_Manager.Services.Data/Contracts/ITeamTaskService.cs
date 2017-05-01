@@ -10,9 +10,11 @@ namespace Team_Manager.Services.Data.Contracts
 {
     public interface ITeamTaskService
     {
-        void AssignTaskToUser(TaskBindModel model);
+        void AssignTaskToUser(CreateTaskBindModel model);
         IEnumerable<TaskViewModel> GetMyTasks(string currentUserId);
         TaskViewModel GetTaskById(int taskId);
         IEnumerable<TeamTaskViewModel> GetAllTeamTasks(int teamId);
+        void AcceptTask(int taskId);
+        void RejectTask(RejectTaskBindModel model);
     }
 }

@@ -369,6 +369,8 @@
     <Content Include="Views\TeamTask\ShowTask.cshtml" />
     <Content Include="Views\TeamTask\AllTasksOfTeam.cshtml" />
     <Content Include="Views\TeamTask\_ShowTaskContent.cshtml" />
+    <Content Include="Views\TeamTask\AcceptTask.cshtml" />
+    <Content Include="Views\TeamTask\RejectTask.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

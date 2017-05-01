@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace Team_Manager.Services.Data.BindindModels
 {
-    public class TaskBindModel
+    public class CreateTaskBindModel
     {
         [Required]
+        [StringLength(200)]
         public string Content { get; set; }
 
         public int TeamId { get; set; }

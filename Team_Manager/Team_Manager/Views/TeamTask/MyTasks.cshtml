@@ -11,8 +11,16 @@
             @Html.ActionLink("Task " + counter, "ShowTask", "TeamTask", new { taskId = task.Id }, new { @class = "success custom-header" })
             Deadline: @task.FinalDate
             From Team: @task.TeamName
-        @Html.ActionLink("Accept", "", "")
-        @Html.ActionLink("Reject", "", "")
+            @if (task.IsAccepted)
+            {
+                <div class="glyphicon glyphicon-ok">Accepted</div>
+            }
+            else
+            {
+                @Html.ActionLink("Accept", "AcceptTask", "TeamTask", new {taskId = task.Id}, new {@class = "btn btn-default btn-primary"})
+                @Html.ActionLink("Reject", "RejectTask", "TeamTask", new { taskId = task.Id }, new {@class = "btn btn-default, btn-danger" })
+            }
+        
     </div>
 
 

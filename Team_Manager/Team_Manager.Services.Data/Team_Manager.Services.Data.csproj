@@ -62,11 +62,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BaseDataService{T}.cs" />
+    <Compile Include="BindindModels\AcceptTaskBindModel.cs" />
+    <Compile Include="BindindModels\RejectTaskBindModel.cs" />
     <Compile Include="BindindModels\CreateCommentBindModel.cs" />
     <Compile Include="BindindModels\CreateInvitationBindModel.cs" />
     <Compile Include="BindindModels\CreateTeamBindModel.cs" />
     <Compile Include="BindindModels\ProcessInvitationBindModel.cs" />
-    <Compile Include="BindindModels\TaskBindModel.cs" />
+    <Compile Include="BindindModels\CreateTaskBindModel.cs" />
     <Compile Include="BindindModels\TopicBindModel.cs" />
     <Compile Include="Contracts\IBaseDataService{T}.cs" />
     <Compile Include="Contracts\ITeamTaskService.cs" />

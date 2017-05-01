@@ -1,0 +1,15 @@
+﻿@model Int32
+
+<div class="container-fluid well">
+    @using (Html.BeginForm("RejectTask", "TeamTask", FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+        <h1>Are you sure you want to reject this task?</h1>
+        <div>Rejection Reason</div>
+        <textarea name="rejectionReason" rows="6" cols="50"></textarea>
+        <input type="number" value=@this.Model hidden="hidden" name="taskId" />
+        <input type="submit" value="Yes" class="btn btn-default btn-danger" />
+        @Html.ActionLink("No", "MyTasks", "TeamTask", null, new { @class = "btn btn-default btn-success" })
+    }
+</div>
+

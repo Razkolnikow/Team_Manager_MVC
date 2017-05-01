@@ -26,7 +26,7 @@ namespace Team_Manager.Services.Data
             this.teams = teams;
         }
 
-        public void AssignTaskToUser(TaskBindModel model)
+        public void AssignTaskToUser(CreateTaskBindModel model)
         {
             var user = this.users.GetById(model.TeamMemberId);
             var team = this.teams.GetById(model.TeamId);
@@ -47,7 +47,7 @@ namespace Team_Manager.Services.Data
         public IEnumerable<TaskViewModel> GetMyTasks(string currentUserId)
         {
             var currentUser = this.users.GetById(currentUserId);
-            return currentUser.TeamTasks.Select(MapTaskViewModelFromTeamTask).ToList();
+            return currentUser.TeamTasks.Where(t => !t.IsRejected).Select(MapTaskViewModelFromTeamTask).ToList();
         }
 
         public TaskViewModel GetTaskById(int taskId)
@@ -61,10 +61,28 @@ namespace Team_Manager.Services.Data
             IEnumerable<TeamTaskViewModel> teamTasks = team.TeamTasks.Select(t => new TeamTaskViewModel()
             {
                 Id = t.Id,
-                TeamMemberName = t.TeamMember.UserName
+                TeamMemberName = t.TeamMember.UserName,
+                IsAccepted = t.IsAccepted,
+                IsRejected = t.IsRejected,
+                RejectionReason = t.RejectionReason
             });
 
             return teamTasks;
+        }
+
+        public void AcceptTask(int taskId)
+        {
+            var task = this.Data.GetById(taskId);
+            task.IsAccepted = true;
+            this.Data.Save();
+        }
+
+        public void RejectTask(RejectTaskBindModel model)
+        {
+            var task = this.Data.GetById(model.TaskId);
+            task.IsRejected = true;
+            task.RejectionReason = model.RejectionReason;
+            this.Data.Save();
         }
 
         private TaskViewModel MapTaskViewModelFromTeamTask(TeamTask task)

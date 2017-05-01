@@ -10,6 +10,15 @@
         <div class="panel">
             @Html.ActionLink("Task " + counter, "ShowTask", "TeamTask", new { taskId = task.Id }, new { @class = "success custom-header" })
             <div>Assigned to @task.TeamMemberName</div>
+            @if (task.IsAccepted)
+            {
+                <div class="glyphicon glyphicon-ok">Accepted</div>
+            }
+            else if (task.IsRejected)
+            {
+                <div class="glyphicon glyphicon-remove">Rejected</div>
+                <div>Rejection reason: @task.RejectionReason</div>
+            }
     </div>
         counter++;
     }

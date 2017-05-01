@@ -13,5 +13,11 @@ namespace Team_Manager.Services.Data.ViewModels.TaskViewModels
 
         [Required]
         public string TeamMemberName { get; set; }
+
+        public bool IsAccepted { get; set; }
+
+        public bool IsRejected { get; set; }
+
+        public string RejectionReason { get; set; }
     }
 }

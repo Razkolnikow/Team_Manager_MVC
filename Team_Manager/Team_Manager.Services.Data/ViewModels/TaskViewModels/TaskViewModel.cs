@@ -12,6 +12,7 @@ namespace Team_Manager.Services.Data.ViewModels.TaskViewModels
         public int Id { get; set; }
 
         [Required]
+        [StringLength(200)]
         public string Content { get; set; }
 
         public string TeamName { get; set; }
@@ -21,5 +22,7 @@ namespace Team_Manager.Services.Data.ViewModels.TaskViewModels
 
         [Required]
         public string TeamMemberId { get; set; }
+
+        public bool IsAccepted { get; set; }
     }
 }

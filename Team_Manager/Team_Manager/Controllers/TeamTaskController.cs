@@ -22,13 +22,14 @@ namespace Team_Manager.Controllers
         public ActionResult AssignTask(string userId, int? teamId)
         {
             ViewBag.IdTeam = teamId;
+            ModelState.AddModelError("Content", "The content can not be longer than 200 characters.");
             var taskModel = new TaskViewModel() {TeamMemberId = userId };
             return View(taskModel);
         }
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult AssignTask([Bind(Include = "Content, FinalDate, TeamMemberId, TeamId")] TaskBindModel model)
+        public ActionResult AssignTask([Bind(Include = "Content, FinalDate, TeamMemberId, TeamId")] CreateTaskBindModel model)
         {
             if (this.ModelState.IsValid)
             {
@@ -42,6 +43,33 @@ namespace Team_Manager.Controllers
         {
             var taskModels = this.service.GetMyTasks(this.CurrentUserId);
             return this.View(taskModels);
+        }
+        
+        public ActionResult AcceptTask(int taskId)
+        {
+            
+            return this.View(taskId);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult AcceptTask([Bind(Include = "TaskId")] AcceptTaskBindModel model)
+        {
+            this.service.AcceptTask(model.TaskId);
+            return this.RedirectToAction("MyTasks");
+        }
+
+        public ActionResult RejectTask(int taskId)
+        {
+            return this.View(taskId);
+        }
+
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult RejectTask([Bind(Include = "TaskId, RejectionReason")] RejectTaskBindModel model)
+        {
+            this.service.RejectTask(model);
+            return this.RedirectToAction("MyTasks");
         }
 
         public ActionResult ShowTask(int taskId)
