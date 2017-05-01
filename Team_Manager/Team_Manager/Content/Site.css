@@ -85,6 +85,11 @@
   background-size: cover;
 }
 
+#task-body {
+  background-image: url('pics/time.jpg');
+  background-size: cover;
+}
+
 /* Set padding to keep content from hitting the edges */
 .body-content {
     padding-left: 15px;
@@ -193,6 +198,11 @@ textarea {
   font-size: 1.7em;
 }
 
+.normal-text {
+  padding: 10px;
+  font-size: 1.4em;
+}
+
 .admin-style-link:hover {
   background-color: rgba(5, 75, 254, 0.6);
   color: black;
@@ -234,7 +244,6 @@ textarea {
 .text-container {
   padding: 10px;
   border-radius: 10px;
-
 }
 
 .team-name {
@@ -263,5 +272,9 @@ textarea {
 	display: inline-block;
 	font-weight: 100;
 	text-align: center;
-	font-size: 30px;
+	font-size: 20px;
+}
+
+.content-container {
+  margin: auto;
 }

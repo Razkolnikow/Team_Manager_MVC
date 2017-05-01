@@ -47,7 +47,7 @@ namespace Team_Manager.Services.Data
         public IEnumerable<TaskViewModel> GetMyTasks(string currentUserId)
         {
             var currentUser = this.users.GetById(currentUserId);
-            return currentUser.TeamTasks.Where(t => !t.IsRejected).Select(MapTaskViewModelFromTeamTask).ToList();
+            return currentUser.TeamTasks.Where(t => !t.IsRejected && !t.IsDeleted).Select(MapTaskViewModelFromTeamTask).ToList();
         }
 
         public TaskViewModel GetTaskById(int taskId)

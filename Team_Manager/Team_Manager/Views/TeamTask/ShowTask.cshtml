@@ -1,24 +1,33 @@
 ﻿@model Team_Manager.Services.Data.ViewModels.TaskViewModels.TaskViewModel
-<div class="container-fluid well">
-    <h2>ShowTask</h2>
+@{
+    Layout = "~/Views/Shared/_TaskLayout.cshtml";
+}
 
+<div class="container-fluid well">
     <div>
-        <h2>Task from @this.Model.TeamName</h2>
-        <input type="datetime" value="@this.Model.FinalDate" hidden="hidden" id="final-date" />
-        @Ajax.ActionLink("Show Task Content",
-        "ShowTaskContent",
-        new { content = this.Model.Content },
-        new AjaxOptions
-        {
-            UpdateTargetId = "task-content",
-            InsertionMode = InsertionMode.Replace,
-            HttpMethod = "GET"
-        },
-        new { @class = "btn btn-primary" }
-        )
-        <div id="task-content"></div>
-        <div>Time Ramaining:</div>
-        <div id="getting-started" class="clock"></div>
+        <h2 class="text-center">Task from @this.Model.TeamName</h2>
+        <div class="centered-element">
+            <div>
+                <input type="datetime" value="@this.Model.FinalDate" hidden="hidden" id="final-date" />
+                @Ajax.ActionLink("Show Task Content",
+                "ShowTaskContent",
+                new { content = this.Model.Content },
+                new AjaxOptions
+                {
+                    UpdateTargetId = "task-content",
+                    InsertionMode = InsertionMode.Replace,
+                    HttpMethod = "GET"
+                },
+                new { @class = "btn btn-primary" }
+                )
+                <div id="task-content" class="centered-element text-center text-container"></div>
+            </div>
+            <div>
+                <div class="normal-text">Time Remaining:</div>
+                <div id="getting-started" class="clock"></div>
+            </div>
+            
+        </div>
+
     </div>
 </div>
-

@@ -74,6 +74,11 @@ namespace Team_Manager.Controllers
         public ActionResult ShowTask(int taskId)
         {
             TaskViewModel taskModel = this.service.GetTaskById(taskId);
+            if (taskModel == null)
+            {
+                return this.RedirectToAction("MyTasks");
+            }
+
             return this.View(taskModel);
         }
 

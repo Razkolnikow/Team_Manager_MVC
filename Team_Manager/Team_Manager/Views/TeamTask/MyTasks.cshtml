@@ -7,23 +7,22 @@
 
     @foreach (var task in this.Model)
     {
-        <div class="panel">
+        <div class="panel text-container flex-type">
             @Html.ActionLink("Task " + counter, "ShowTask", "TeamTask", new { taskId = task.Id }, new { @class = "success custom-header" })
-            Deadline: @task.FinalDate
-            From Team: @task.TeamName
+            <span class="normal-text">Deadline: @task.FinalDate</span>
+            <span class="normal-text">From Team: @task.TeamName</span>
             @if (task.IsAccepted)
             {
                 <div class="glyphicon glyphicon-ok">Accepted</div>
             }
             else
             {
-                @Html.ActionLink("Accept", "AcceptTask", "TeamTask", new {taskId = task.Id}, new {@class = "btn btn-default btn-primary"})
-                @Html.ActionLink("Reject", "RejectTask", "TeamTask", new { taskId = task.Id }, new {@class = "btn btn-default, btn-danger" })
+                <div>
+                    @Html.ActionLink("Accept", "AcceptTask", "TeamTask", new { taskId = task.Id }, new { @class = "btn btn-default btn-primary" })
+                    @Html.ActionLink("Reject", "RejectTask", "TeamTask", new { taskId = task.Id }, new { @class = "btn btn-default, btn-danger" })
+                </div>
             }
-        
-    </div>
-
-
+        </div>
         counter++;
     }
 </div>
