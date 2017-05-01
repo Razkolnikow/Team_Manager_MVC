@@ -177,8 +177,34 @@ textarea {
   justify-content: space-around;
 }
 
+.flex-normal {
+  display: flex;
+  justify-content: center;
+}
+
 .flex-item {
   align-self: stretch;
+}
+
+.padded {
+  padding: 5px;
+}
+
+.custom-table {
+  border: 1px solid black;
+}
+
+.custom-table td {
+  border: 1px solid black;
+  width: 100px;
+}
+.custom-table tr {
+  width: 100px;
+}
+
+.left, .right {
+  padding: 15px;
+  border-radius: 15px;
 }
 
 .logo {

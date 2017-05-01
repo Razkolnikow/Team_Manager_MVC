@@ -35,6 +35,11 @@ namespace Team_Manager.Services.Data
         public TeamManagerUserViewModel FindUserById(string userId)
         {
             var user = this.Data.GetById(userId);
+            if (user == null)
+            {
+                return null;
+            }
+
             TeamManagerUserViewModel model = new TeamManagerUserViewModel()
             {
                 Id = user.Id,
@@ -51,6 +56,11 @@ namespace Team_Manager.Services.Data
         public CurrentUserTeamsViewModel GetCurrentUserTeams(string currentUserId)
         {
             var currentUser = this.Data.GetById(currentUserId);
+            if (currentUser == null)
+            {
+                return null;
+            }
+
             IEnumerable<SimpleTeamViewModel> currentUserTeams = currentUser
                 .MemberTeams
                 .Where(t => !t.IsDeleted)

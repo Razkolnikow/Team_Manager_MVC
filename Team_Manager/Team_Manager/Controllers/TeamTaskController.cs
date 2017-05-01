@@ -98,9 +98,14 @@ namespace Team_Manager.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteTask(int taskId)
+        public ActionResult DeleteTask(int? taskId)
         {
-            int teamId = this.service.DeleteTask(taskId);
+            if (!this.IsValidParameter(taskId))
+            {
+                return this.RedirectToAction("MyTasks");
+            }
+
+            int teamId = this.service.DeleteTask(taskId.Value);
             return this.RedirectToAction("AllTasksOfTeam", new {teamId = teamId});
         }
     }

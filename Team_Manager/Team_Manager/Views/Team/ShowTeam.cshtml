@@ -2,22 +2,40 @@
 
 
 <div class="well container-fluid">
-    <h2>Team name - @this.Model.BasicTeamInfo.Name</h2>
-    <h3>Team Category - @this.Model.BasicTeamInfo.Category</h3>
-    <h3>Team - Subcategory - @this.Model.BasicTeamInfo.SubCategory</h3>
+    <h2 class="panel text-center text-container">Team name - @this.Model.BasicTeamInfo.Name</h2>
+    <h3 class="panel text-center text-container">Team Category - @this.Model.BasicTeamInfo.Category</h3>
+    <h3 class="panel text-center text-container">Team Subcategory - @this.Model.BasicTeamInfo.SubCategory</h3>
 
-    <h3>Topics: </h3>
-    @foreach (var topic in this.Model.Topics)
-    {
-        <div>@Html.ActionLink(topic.Title, "ShowTeamTopic", "Team", new { topicId = topic.Id }, null)</div>
-    }
-
-    <h3>Members: </h3>
-    @foreach (var member in this.Model.TeamMembers)
-    {
-        <div>@member.UserName</div>
-    }
-
-    @Html.ActionLink("Create Topic", "CreateTopic", "Team", new { teamId = this.Model.BasicTeamInfo.Id }, null)
+    <div class="flex-type">
+        <div class="left">
+            <h3>Topics: </h3>
+            <table class="custom-table">
+                @foreach (var topic in this.Model.Topics)
+                {
+                    <tr>
+                        <td>
+                            <div class="padded normal-text">@Html.ActionLink(topic.Title, "ShowTeamTopic", "Team", new { topicId = topic.Id }, null)</div>
+                        </td>
+                    </tr>
+                }
+            </table>
+            @Html.ActionLink("Create Topic", "CreateTopic", "Team", new { teamId = this.Model.BasicTeamInfo.Id }, new { @class = "btn btn-default btn-primary" })
+        </div>
+        <div class="right">
+            <h3>Members: </h3>
+            <table class="custom-table">
+                @foreach (var member in this.Model.TeamMembers)
+            {
+                    <tr>
+                        <td>
+                            <div class="normal-text">
+                                @Html.ActionLink(member.UserName, "UserInfo", "User", new { userId = member.Id }, null)
+                            </div>
+                        </td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
 
 </div>

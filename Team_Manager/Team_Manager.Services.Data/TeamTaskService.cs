@@ -58,7 +58,8 @@ namespace Team_Manager.Services.Data
         public IEnumerable<TeamTaskViewModel> GetAllTeamTasks(int teamId)
         {
             var team = this.teams.GetById(teamId);
-            IEnumerable<TeamTaskViewModel> teamTasks = team.TeamTasks.Where(t => !t.IsDeleted).Select(t => new TeamTaskViewModel()
+
+            IEnumerable<TeamTaskViewModel> teamTasks = team?.TeamTasks.Where(t => !t.IsDeleted).Select(t => new TeamTaskViewModel()
             {
                 Id = t.Id,
                 TeamMemberName = t.TeamMember.UserName,
@@ -94,6 +95,11 @@ namespace Team_Manager.Services.Data
         public int DeleteTask(int taskId)
         {
             var task = this.Data.GetById(taskId);
+            if (task == null)
+            {
+                return 1;
+            }
+
             int teamId = task.Team.Id;
             this.Data.Delete(task);
             this.Data.Save();

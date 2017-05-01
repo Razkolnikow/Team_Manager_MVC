@@ -6,5 +6,15 @@ namespace Team_Manager.Controllers
     public abstract class BaseController : Controller
     {
         protected string CurrentUserId => User.Identity.GetUserId();
+
+        protected bool IsValidParameter(object parameter)
+        {
+            if (parameter == null)
+            {
+                return false;
+            }
+
+            return true;
+        }
     }
 }

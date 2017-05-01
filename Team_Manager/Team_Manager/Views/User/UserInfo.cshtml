@@ -3,7 +3,7 @@
 <div class="container-fluid well">
     <h2 class="panel text-center text-container" id="custom-background">User Information</h2>
 
-    <h2 class="panel text-center text-container">UserName: @this.Model.UserName</h2>
+    <h2 class="panel text-center text-container">UserName: @Html.DisplayFor(m => m.UserName)</h2>
     <div>
         <h2 class="panel text-center text-container">Teams: </h2>
         @foreach (var teamName in this.Model.TeamNames)

@@ -59,22 +59,52 @@ namespace Team_Manager.Controllers
             }
         }
 
-        public ActionResult TeamMembers(int teamId = 1)
+        public ActionResult TeamMembers(int? teamId)
         {
-            ViewBag.TeamId = teamId;
-            IEnumerable<TeamMemberViewModel> teamMembers = this.service.GetTeamMembers(teamId);
+            if (!this.IsValidParameter(teamId))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
+            ViewBag.TeamId = teamId.Value;
+            IEnumerable<TeamMemberViewModel> teamMembers = this.service.GetTeamMembers(teamId.Value);
+            if (!this.IsValidParameter(teamMembers))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
             return this.View(teamMembers);
         }
 
-        public ActionResult TeamTopics(int teamId = 1)
+        public ActionResult TeamTopics(int? teamId)
         {
-            IEnumerable<TopicViewModel> teamTopics = this.service.GetAllTeamTopics(teamId);
+            if (!this.IsValidParameter(teamId))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
+            IEnumerable<TopicViewModel> teamTopics = this.service.GetAllTeamTopics(teamId.Value);
+            if (!this.IsValidParameter(teamTopics))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
             return this.View(teamTopics);
         }
 
-        public ActionResult ShowTeamTopic(int topicId = 1)
+        public ActionResult ShowTeamTopic(int? topicId)
         {
-            TopicWithCommentsViewModel model = this.service.GetTopicById(topicId);
+            if (!this.IsValidParameter(topicId))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
+            TopicWithCommentsViewModel model = this.service.GetTopicById(topicId.Value);
+            if (!this.IsValidParameter(model))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
             return this.View(model);
         }
 
@@ -83,9 +113,19 @@ namespace Team_Manager.Controllers
             return this.PartialView("_AddComment");
         }
 
-        public ActionResult ShowTeam(int teamId = 1)
+        public ActionResult ShowTeam(int? teamId)
         {
-            ShowTeamViewModel teamViewModel = this.service.GetShowTeamViewModel(teamId);
+            if (!this.IsValidParameter(teamId))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
+            ShowTeamViewModel teamViewModel = this.service.GetShowTeamViewModel(teamId.Value);
+            if (!this.IsValidParameter(teamViewModel))
+            {
+                return this.RedirectToAction("MyTeams");
+            }
+
             return this.View(teamViewModel);
         }
 

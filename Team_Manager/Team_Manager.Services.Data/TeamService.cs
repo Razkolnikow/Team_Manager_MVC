@@ -52,6 +52,11 @@ namespace Team_Manager.Services.Data
         public ShowTeamViewModel GetShowTeamViewModel(int teamId)
         {
             var team = this.Data.GetById(teamId);
+            if (team == null)
+            {
+                return null;
+            }
+
             IEnumerable<TeamMemberViewModel> teamMembers = team.TeamMembers
                 .Select(MapTeamMemberViewModelToUser).ToList();
 
@@ -72,6 +77,11 @@ namespace Team_Manager.Services.Data
         public TeamViewModel GetTeamById(int teamId)
         {
             var teamModel = this.Data.GetById(teamId);
+            if (teamModel == null)
+            {
+                return null;
+            }
+
             return MapTeamViewModelFromTeam(teamModel);
         }
 
@@ -105,12 +115,18 @@ namespace Team_Manager.Services.Data
         public TopicWithCommentsViewModel GetTopicById(int topicId)
         {
             var topic = this.topics.GetById(topicId);
+            if (topic == null)
+            {
+                return null;
+            }
+
             return MapTopicWithCommentsViewModelFromTopic(topic);
         }
 
         public void AddComment(CreateCommentBindModel model)
         {
             var topic = this.topics.GetById(model.TopicId);
+
             var comment = new Comment()
             {
                 Content = model.Content,
@@ -125,11 +141,11 @@ namespace Team_Manager.Services.Data
         public IEnumerable<TeamMemberViewModel> GetTeamMembers(int teamId)
         {
             var team = this.Data.GetById(teamId);
+
             IEnumerable<TeamMemberViewModel> teamMembers = 
-                team
-                .TeamMembers
-                .Select(this.MapTeamMemberViewModelToUser)
-                .ToList();
+                team?.TeamMembers
+                    .Select(this.MapTeamMemberViewModelToUser)
+                    .ToList();
             return teamMembers;
         }
 
@@ -137,7 +153,7 @@ namespace Team_Manager.Services.Data
         {
             var team = this.Data.GetById(teamId);
             IEnumerable<TopicViewModel> topics = 
-                team
+                team?
                 .Topics
                 .Select(this.MapTopicViewModelFromTopic)
                 .ToList();
