@@ -18,5 +18,8 @@ namespace Team_Manager.Services.Data.Contracts
         void RejectTask(RejectTaskBindModel model);
         string GetTeamCreatorId(int teamId);
         int DeleteTask(int taskId);
+        bool IsCurrentUserMemberOfTeam(int teamId, string currentUserId);
+        bool CheckIfCurrentUserIsMemberOfTeamTask(int taskId, string currentUserId);
+        bool IsTaskAssignedToCurrentUser(int taskId, string currentUserId);
     }
 }

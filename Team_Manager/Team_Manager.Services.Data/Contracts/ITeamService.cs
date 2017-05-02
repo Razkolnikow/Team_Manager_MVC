@@ -3,6 +3,7 @@ using Team_Manager.Data.Common;
 using Team_Manager.Data.Models;
 using Team_Manager.Services.Data.BindindModels;
 using Team_Manager.Services.Data.ViewModels;
+using Team_Manager.Services.Data.ViewModels.AdminViewModels;
 
 namespace Team_Manager.Services.Data.Contracts
 {
@@ -10,7 +11,7 @@ namespace Team_Manager.Services.Data.Contracts
     {
         void CreateTeam(CreateTeamBindModel model, string currentUserId);
 
-        IDbRepository<ApplicationUser> Users { get; }
+        //IDbRepository<ApplicationUser> Users { get; }
         IEnumerable<TeamViewModel> GetAllTeamsOfCurrentUser(string currentUserId);
         ShowTeamViewModel GetShowTeamViewModel(int teamId);
         TeamViewModel GetTeamById(int teamId);
@@ -21,5 +22,7 @@ namespace Team_Manager.Services.Data.Contracts
         IEnumerable<TeamMemberViewModel> GetTeamMates(string currentUserId);
         IEnumerable<TeamMemberViewModel> GetTeamMembers(int teamId);
         IEnumerable<TopicViewModel> GetAllTeamTopics(int teamId);
+        IEnumerable<TeamAdminViewModel> GetAllTeams();
+        bool IsCurrentUserMemberOfTeam(int teamId, string currentUserId);
     }
 }

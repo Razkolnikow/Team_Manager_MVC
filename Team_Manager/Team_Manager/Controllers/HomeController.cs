@@ -23,5 +23,10 @@ namespace Team_Manager.Controllers
 
             return View();
         }
+
+        public ActionResult Error()
+        {
+            return this.View();
+        }
     }
 }

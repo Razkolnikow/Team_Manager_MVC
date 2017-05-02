@@ -14,7 +14,7 @@ namespace Team_Manager.Services.Data.ViewModels.TaskViewModels
 
         [Required(ErrorMessage = "The content field is required and can not be longer than 200 characters!")]
         [StringLength(200)]
-        [AllowHtml]
+        [RegularExpression(@"[^<>]+", ErrorMessage = "Html tag symbols are not allowed!")]
         public string Content { get; set; }
 
         public string TeamName { get; set; }

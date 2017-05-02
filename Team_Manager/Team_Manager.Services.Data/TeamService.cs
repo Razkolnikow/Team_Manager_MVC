@@ -8,21 +8,21 @@ using Team_Manager.Data.Models.Enums;
 using Team_Manager.Services.Data.BindindModels;
 using Team_Manager.Services.Data.Contracts;
 using Team_Manager.Services.Data.ViewModels;
+using Team_Manager.Services.Data.ViewModels.AdminViewModels;
 
 namespace Team_Manager.Services.Data
 {
     public class TeamService : BaseDataService<Team>, ITeamService
     {
         private IDbRepository<Topic> topics;
+        private IDbRepository<ApplicationUser> users;
 
         public TeamService(IDbRepository<Team> dataSet, IDbRepository<ApplicationUser> users, IDbRepository<Topic> topics) 
             : base(dataSet)
         {
-            this.Users = users;
+            this.users = users;
             this.topics = topics;
         }
-
-        public IDbRepository<ApplicationUser> Users { get; private set; }
 
         public void CreateTeam(CreateTeamBindModel model, string currentUserId)
         {
@@ -161,6 +161,30 @@ namespace Team_Manager.Services.Data
             return topics;
         }
 
+        public IEnumerable<TeamAdminViewModel> GetAllTeams()
+        {
+            return this.Data.All().Select(team => new
+            {
+                team.Id,
+                team.Name
+            }).Select(t => new TeamAdminViewModel()
+            {
+                Id = t.Id,
+                TeamName = t.Name
+            }).ToList();
+        }
+
+        public bool IsCurrentUserMemberOfTeam(int teamId, string currentUserId)
+        {
+            var team = this.Data.GetById(teamId);
+            if (team.TeamMembers.Any(u => u.Id == currentUserId))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private TopicWithCommentsViewModel MapTopicWithCommentsViewModelFromTopic(Topic topic)
         {
             var config = new MapperConfiguration(cfg =>
@@ -177,7 +201,8 @@ namespace Team_Manager.Services.Data
             {
                 Id = topic.Id,
                 Title = topic.Title,
-                Comments = commentModels
+                Comments = commentModels,
+                TeamId = topic.Team.Id
             };
 
             return topicModel;
@@ -185,7 +210,7 @@ namespace Team_Manager.Services.Data
 
         private ApplicationUser GetCurrentUser(string currentUserId)
         {
-            return this.Users.GetById(currentUserId);
+            return this.users.GetById(currentUserId);
         }
 
 
@@ -213,7 +238,7 @@ namespace Team_Manager.Services.Data
 
         public IEnumerable<TeamMemberViewModel> GetTeamMates(string currentUserId)
         {
-            var currentUser = this.Users.GetById(currentUserId);
+            var currentUser = this.users.GetById(currentUserId);
             var initialMembers = currentUser.MemberTeams
                 .Where(team => !team.IsDeleted)
                 .SelectMany(t => t.TeamMembers)

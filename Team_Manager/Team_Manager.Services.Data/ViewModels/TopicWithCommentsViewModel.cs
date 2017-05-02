@@ -12,6 +12,8 @@ namespace Team_Manager.Services.Data.ViewModels
 
         public string Title { get; set; }
 
+        public int TeamId { get; set; }
+
         public IEnumerable<CommentViewModel> Comments { get; set; }
     }
 }

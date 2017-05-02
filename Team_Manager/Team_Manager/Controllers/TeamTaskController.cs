@@ -19,10 +19,11 @@ namespace Team_Manager.Controllers
         {
             this.service = service;
         }
-        public ActionResult AssignTask(string userId, int? teamId)
+        public ActionResult AssignTask(string userId, int teamId)
         {
+            this.ValidateIfCurrentUserIsMemberOfTeam(teamId);
             ViewBag.IdTeam = teamId;
-            ModelState.AddModelError("Content", "The content can not be longer than 200 characters.");
+            //ModelState.AddModelError("Content", "The content can not be longer than 200 characters.");
             var taskModel = new TaskViewModel() {TeamMemberId = userId };
             return View(taskModel);
         }
@@ -47,6 +48,7 @@ namespace Team_Manager.Controllers
         
         public ActionResult AcceptTask(int taskId)
         {
+            this.ValidateIfTaskIsAssignedToCurrentUser(taskId);
             return this.View(taskId);
         }
 
@@ -60,6 +62,7 @@ namespace Team_Manager.Controllers
 
         public ActionResult RejectTask(int taskId)
         {
+            this.ValidateIfTaskIsAssignedToCurrentUser(taskId);
             return this.View(taskId);
         }
 
@@ -71,18 +74,10 @@ namespace Team_Manager.Controllers
             return this.RedirectToAction("MyTasks");
         }
 
-        public ActionResult ShowTask(int? taskId)
+        public ActionResult ShowTask(int taskId)
         {
-            if (!this.IsValidObject(taskId))
-            {
-                return this.RedirectToAction("MyTasks");
-            }
-
-            TaskViewModel taskModel = this.service.GetTaskById(taskId.Value);
-            if (taskModel == null)
-            {
-                return this.RedirectToAction("MyTasks");
-            }
+            this.ValidateTaskRightsOfCurrentUser(taskId);
+            TaskViewModel taskModel = this.service.GetTaskById(taskId);
 
             return this.View(taskModel);
         }
@@ -94,6 +89,7 @@ namespace Team_Manager.Controllers
 
         public ActionResult AllTasksOfTeam(int teamId)
         {
+            this.ValidateIfCurrentUserIsMemberOfTeam(teamId);
             IEnumerable<TeamTaskViewModel> teamTasks = this.service.GetAllTeamTasks(teamId);
             string creatorId = this.service.GetTeamCreatorId(teamId);
             ViewBag.CreatorId = creatorId;
@@ -103,15 +99,52 @@ namespace Team_Manager.Controllers
 
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult DeleteTask(int? taskId)
+        public ActionResult DeleteTask(int taskId)
         {
-            if (!this.IsValidObject(taskId))
-            {
-                return this.RedirectToAction("MyTasks");
-            }
-
-            int teamId = this.service.DeleteTask(taskId.Value);
+            int teamId = this.service.DeleteTask(taskId);
             return this.RedirectToAction("AllTasksOfTeam", new {teamId = teamId});
+        }
+
+        private bool CheckIfCurrentUserIsMemberOfTeam(int teamId)
+        {
+            var isMember = this.service.IsCurrentUserMemberOfTeam(teamId, this.CurrentUserId);
+
+            return isMember;
+        }
+
+        private void ValidateIfCurrentUserIsMemberOfTeam(int teamId)
+        {
+            if (!this.CheckIfCurrentUserIsMemberOfTeam(teamId))
+            {
+                throw new InvalidOperationException();
+            }
+        }
+
+        private bool IsCurrentUserMemberOfTeamTask(int taskId)
+        {
+            var isMemberOfTeamTask = this.service.CheckIfCurrentUserIsMemberOfTeamTask(taskId, this.CurrentUserId);
+            return isMemberOfTeamTask;
+        }
+
+        private void ValidateTaskRightsOfCurrentUser(int taskId)
+        {
+            if (! this.IsCurrentUserMemberOfTeamTask(taskId))
+            {
+                throw new InvalidOperationException();
+            }            
+        }
+
+        private bool IsTaskAssignedToCurrentUser(int taskId)
+        {
+            return this.service.IsTaskAssignedToCurrentUser(taskId, this.CurrentUserId);
+        }
+
+        private void ValidateIfTaskIsAssignedToCurrentUser(int taskId)
+        {
+            if (!this.IsTaskAssignedToCurrentUser(taskId))
+            {
+                throw new InvalidOperationException();
+            }
         }
     }
 }

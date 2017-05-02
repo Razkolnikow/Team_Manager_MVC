@@ -1,4 +1,5 @@
-﻿using System.Reflection;
+﻿using System;
+using System.Reflection;
 using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
@@ -16,9 +17,13 @@ namespace Team_Manager
             
             ViewEngines.Engines.Clear();
             ViewEngines.Engines.Add(new RazorViewEngine());
+        }
 
-            //var autoMapperConfig = new AutoMappperCon();
-            //autoMapperConfig.Execute(Assembly.GetExecutingAssembly());
+        protected void Application_Error(object sender, EventArgs e)
+        {
+            Exception exception = Server.GetLastError();
+            Server.ClearError();
+            Server.TransferRequest("/Home/Error");
         }
     }
 }

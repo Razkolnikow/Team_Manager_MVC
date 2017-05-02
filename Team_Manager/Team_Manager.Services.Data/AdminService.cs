@@ -95,6 +95,18 @@ namespace Team_Manager.Services.Data
         public void DeleteTeam(int modelTeamId)
         {
             var team = this.teams.GetById(modelTeamId);
+            foreach (var teamTeamTask in team.TeamTasks)
+            {
+                teamTeamTask.IsDeleted = true;
+                teamTeamTask.DeletedOn = DateTime.UtcNow;
+            }
+
+            foreach (var teamTopic in team.Topics)
+            {
+                teamTopic.IsDeleted = true;
+                teamTopic.DeletedOn = DateTime.UtcNow;
+            }
+
             this.teams.Delete(team);
             this.Save();
         }

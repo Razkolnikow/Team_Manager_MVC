@@ -106,6 +106,39 @@ namespace Team_Manager.Services.Data
             return teamId;
         }
 
+        public bool IsCurrentUserMemberOfTeam(int teamId, string currentUserId)
+        {
+            var team = this.teams.GetById(teamId);
+            if (team.TeamMembers.Any(u => u.Id == currentUserId))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool CheckIfCurrentUserIsMemberOfTeamTask(int taskId, string currentUserId)
+        {
+            var task = this.Data.GetById(taskId);
+            if (task.Team.TeamMembers.Any(u => u.Id == currentUserId))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        public bool IsTaskAssignedToCurrentUser(int taskId, string currentUserId)
+        {
+            var task = this.Data.GetById(taskId);
+            if (task.TeamMember.Id == currentUserId)
+            {
+                return true;
+            }
+
+            return false;
+        }
+
         private TaskViewModel MapTaskViewModelFromTeamTask(TeamTask task)
         {
             var config = new MapperConfiguration(cfg =>
@@ -118,7 +151,5 @@ namespace Team_Manager.Services.Data
 
             return mapper.Map<TaskViewModel>(task);
         }
-
-        
     }
 }

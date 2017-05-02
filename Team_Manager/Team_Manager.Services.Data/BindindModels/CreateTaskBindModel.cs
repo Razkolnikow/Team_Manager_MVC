@@ -12,7 +12,6 @@ namespace Team_Manager.Services.Data.BindindModels
     {
         [Required]
         [StringLength(200)]
-        [AllowHtml]
         public string Content { get; set; }
 
         public int TeamId { get; set; }
