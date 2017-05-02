@@ -35,11 +35,6 @@ namespace Team_Manager.Controllers
         public ActionResult UserInfo(string userId)
         {
             var user = this.service.FindUserById(userId);
-            if (!this.IsValidObject(user))
-            {
-                return this.RedirectToAction("AllUsers");
-            }
-
             return View(user);
         }
 
