@@ -6,9 +6,10 @@
     @foreach (var comment in this.Model.Comments)
     {
         <div class="row">
-            <div class="col-sm-5">
+            <div class="centered-element">
                 <div class="panel panel-default">
                     <div class="panel-heading">
+                        <span class="glyphicon glyphicon-user"></span>
                         <span>@comment.Author</span>
                         <span>commented on @comment.CreatedOn</span>
                         <div class="panel-body">
