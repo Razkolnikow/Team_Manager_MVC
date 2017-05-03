@@ -38,6 +38,7 @@ namespace Team_Manager.Controllers
             return View(user);
         }
 
+        [OutputCache(Duration = 1*60, VaryByParam = "*")]
         public ActionResult AllUsers()
         {
             var users = this.service.GetAllUsers();
@@ -75,9 +76,9 @@ namespace Team_Manager.Controllers
             return this.View();
         }
 
-        public ActionResult Testing()
-        {
-            return this.View("RejectInvitation");
-        }
+        //public ActionResult Testing()
+        //{
+        //    return this.View("RejectInvitation");
+        //}
     }
 }

@@ -304,3 +304,7 @@ textarea {
 .content-container {
   margin: auto;
 }
+
+#background {
+  background-color: #625959;
+}

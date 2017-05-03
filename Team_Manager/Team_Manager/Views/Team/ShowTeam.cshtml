@@ -2,39 +2,71 @@
 
 
 <div class="well container-fluid">
-    <h2 class="panel text-center text-container">Team name - @this.Model.BasicTeamInfo.Name</h2>
-    <h3 class="panel text-center text-container">Team Category - @this.Model.BasicTeamInfo.Category</h3>
-    <h3 class="panel text-center text-container">Team Subcategory - @this.Model.BasicTeamInfo.SubCategory</h3>
-
-    <div class="flex-type">
-        <div class="left">
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#name">Team name</a>
+                </h4>
+            </div>
+            <div id="name" class="panel-collapse collapse">
+                <div class="panel-body custom-header">@this.Model.BasicTeamInfo.Name</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#category">Team Category</a>
+                </h4>
+            </div>
+            <div id="category" class="panel-collapse collapse">
+                <div class="panel-body custom-header">@this.Model.BasicTeamInfo.Category</div>
+            </div>
+        </div>
+    </div>
+    <div class="panel-group">
+        <div class="panel panel-primary">
+            <div class="panel-heading">
+                <h4 class="panel-title">
+                    <a data-toggle="collapse" href="#subcategory">Team Subcategory</a>
+                </h4>
+            </div>
+            <div id="subcategory" class="panel-collapse collapse">
+                <div class="panel-body custom-header">@this.Model.BasicTeamInfo.SubCategory</div>
+            </div>
+        </div>
+    </div>
+    <ul class="nav nav-tabs">
+        <li class="active"><a data-toggle="tab" href="#topics">Topics</a></li>
+        <li><a data-toggle="tab" href="#users">Users</a></li>
+    </ul>
+    <div class="tab-content">
+        <div class="tab-pane fade in active" id="topics">
             <h3>Topics: </h3>
-            <table class="custom-table">
+            <ul class="list-group">
                 @foreach (var topic in this.Model.Topics)
                 {
-                    <tr>
-                        <td>
-                            <div class="padded normal-text">@Html.ActionLink(topic.Title, "ShowTeamTopic", "Team", new { topicId = topic.Id }, null)</div>
-                        </td>
-                    </tr>
+                    <li class="list-group-item list-group-item-success">
+                        <div class="text-center normal-text">@Html.ActionLink(topic.Title, "ShowTeamTopic", "Team", new {topicId = topic.Id}, null)</div>
+                    </li>
                 }
-            </table>
-            @Html.ActionLink("Create Topic", "CreateTopic", "Team", new { teamId = this.Model.BasicTeamInfo.Id }, new { @class = "btn btn-default btn-primary" })
+            </ul>
+            @Html.ActionLink("Create Topic", "CreateTopic", "Team", new {teamId = this.Model.BasicTeamInfo.Id}, new {@class = "btn btn-default btn-primary"})
         </div>
-        <div class="right">
+        <div class="tab-pane fade" id="users">
             <h3>Members: </h3>
-            <table class="custom-table">
+            <ul class="list-group">
                 @foreach (var member in this.Model.TeamMembers)
-            {
-                    <tr>
-                        <td>
-                            <div class="normal-text">
-                             @Html.ActionLink(member.UserName, "UserInfo", "User", new { userId = member.Id }, null)
-                            </div>
-                        </td>
-                    </tr>
+                {
+                    <li class="list-group-item list-group-item-success">
+                        <div class="text-center normal-text">
+                            @Html.ActionLink(member.UserName, "UserInfo", "User", new {userId = member.Id}, null)
+                        </div>
+                    </li>
                 }
-            </table>
+            </ul>
         </div>
     </div>
 

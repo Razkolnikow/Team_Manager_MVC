@@ -1,8 +1,8 @@
 ﻿@using Microsoft.AspNet.Identity
 @model Team_Manager.Services.Data.ViewModels.TopicWithCommentsViewModel
 
-<div class="container-fluid well">
-    <h1 class="text-center">Topic: @this.Model.Title</h1>
+<div class="container-fluid" id="background">
+    <h1 class="panel text-center fredoka custom-header">Topic: @this.Model.Title</h1>
     @foreach (var comment in this.Model.Comments)
     {
         <div class="row">

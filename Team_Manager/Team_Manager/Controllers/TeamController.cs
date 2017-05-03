@@ -26,6 +26,7 @@ namespace Team_Manager.Controllers
             return View(myTeams);
         }
 
+        [OutputCache(Duration = 60*60, VaryByParam = "*")]
         public ActionResult AllTeams()
         {
             IEnumerable<TeamAdminViewModel> models = this.service.GetAllTeams();
@@ -67,6 +68,7 @@ namespace Team_Manager.Controllers
             }
         }
 
+        [OutputCache(Duration = 10*60, VaryByParam = "*")]
         public ActionResult TeamMembers(int teamId)
         {
             this.ValidateIfCurrentUserIsMemberOfTeam(teamId);
@@ -83,6 +85,7 @@ namespace Team_Manager.Controllers
             return this.View(teamTopics);
         }
 
+        //[OutputCache(Duration = 1*60, VaryByParam = "*")]
         public ActionResult ShowTeamTopic(int topicId)
         {
             TopicWithCommentsViewModel model = this.service.GetTopicById(topicId);
