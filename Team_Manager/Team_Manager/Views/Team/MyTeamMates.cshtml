@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<Team_Manager.Services.Data.ViewModels.TeamMemberViewModel>
-<div class="container-fluid well">
+<div class="container-fluid well" id="border">
     <h1 class="fredoka custom-header">My TeamMates</h1>
 
     @foreach (var teamMate in this.Model)
     {
-        <div class="panel centered-element">
+        <div class="panel centered-element" id="border">
             @Html.ActionLink(teamMate.UserName, "UserInfo", "User", new { userId = teamMate.Id }, new { @class = "success custom-header" })
         </div>
 

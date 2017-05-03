@@ -1,6 +1,6 @@
 ﻿@model Team_Manager.Services.Data.ViewModels.TaskViewModels.TaskViewModel
 
-<div class="container-fluid well">
+<div class="container-fluid well" id="border">
     @using (Html.BeginForm("AssignTask", "TeamTask", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
     {
         @Html.AntiForgeryToken()

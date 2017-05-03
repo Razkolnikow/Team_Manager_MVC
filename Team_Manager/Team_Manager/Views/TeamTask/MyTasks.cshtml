@@ -7,7 +7,7 @@
 
     @foreach (var task in this.Model)
     {
-        <div class="panel text-container flex-type">
+        <div class="panel text-container flex-type" id="border">
             @Html.ActionLink("Task " + counter, "ShowTask", "TeamTask", new { taskId = task.Id }, new { @class = "success custom-header" })
             <span class="normal-text">Deadline: @task.FinalDate</span>
             <span class="normal-text">From Team: @task.TeamName</span>

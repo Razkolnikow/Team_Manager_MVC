@@ -1,6 +1,6 @@
 ﻿@model Int32
     
-<div class="container-fluid well">
+<div class="container-fluid well" id="border">
     <h3 class="text-center">Are you sure you want to delete this team?</h3>
     @using (Html.BeginForm("DeleteTeam", "Admin", new {area = "Administration"}, FormMethod.Post))
     {

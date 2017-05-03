@@ -7,7 +7,7 @@
 
     @foreach (var task in this.Model)
     {
-        <div class="panel">
+        <div class="panel padded" id="border">
             @Html.ActionLink("Task " + counter, "ShowTask", "TeamTask", new { taskId = task.Id }, new { @class = "success custom-header" })
             <div>Assigned to @task.TeamMemberName</div>
             @if (task.IsAccepted)

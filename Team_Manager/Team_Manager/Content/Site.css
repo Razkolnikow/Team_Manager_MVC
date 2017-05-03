@@ -308,3 +308,7 @@ textarea {
 #background {
   background-color: #625959;
 }
+
+#border {
+  border: 1px solid black;
+}
