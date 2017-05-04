@@ -190,6 +190,12 @@ namespace Team_Manager.Services.Data
             return false;
         }
 
+        public string GetTeamCreatorId(int teamId)
+        {
+            var creatorId = this.Data.GetById(teamId)?.Creator.Id;
+            return creatorId;
+        }
+
         private TopicWithCommentsViewModel MapTopicWithCommentsViewModelFromTopic(Topic topic)
         {
             var config = new MapperConfiguration(cfg =>
@@ -255,7 +261,5 @@ namespace Team_Manager.Services.Data
 
             return teamMembers;
         }
-
-       
     }
 }

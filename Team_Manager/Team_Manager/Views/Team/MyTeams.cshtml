@@ -30,7 +30,7 @@
                             <td>@team.SubCategory</td>
                         </tr>
                         <tr class="active menu hoverClick fredoka">
-                            <td><a>@Html.ActionLink("Creator", null, null, null, null)</a></td>
+                            <td><a>@Html.ActionLink("Creator", "Creator", "Team", new {teamId = team.Id}, null)</a></td>
                             <td><a>@Html.ActionLink("Topics", "TeamTopics", "Team", new { teamId = team.Id }, null)</a></td>
                             <td><a>@Html.ActionLink("Tasks", "AllTasksOfTeam", "TeamTask", new { teamId = team.Id }, null)</a></td>
                             <td>@Html.ActionLink("Members", "TeamMembers", "Team", new { teamId = team.Id }, null)</td>

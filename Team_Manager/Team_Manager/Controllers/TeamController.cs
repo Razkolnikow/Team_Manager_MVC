@@ -26,6 +26,12 @@ namespace Team_Manager.Controllers
             return View(myTeams);
         }
 
+        public ActionResult Creator(int teamId)
+        {
+            string creatorId = this.service.GetTeamCreatorId(teamId);
+            return this.RedirectToAction("UserInfo", "User", new {userId = creatorId});
+        }
+
         [OutputCache(Duration = 60*60, VaryByParam = "*")]
         public ActionResult AllTeams()
         {

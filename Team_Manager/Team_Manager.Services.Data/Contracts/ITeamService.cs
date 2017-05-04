@@ -24,5 +24,6 @@ namespace Team_Manager.Services.Data.Contracts
         IEnumerable<TopicViewModel> GetAllTeamTopics(int teamId);
         IEnumerable<TeamAdminViewModel> GetAllTeams();
         bool IsCurrentUserMemberOfTeam(int teamId, string currentUserId);
+        string GetTeamCreatorId(int teamId);
     }
 }
