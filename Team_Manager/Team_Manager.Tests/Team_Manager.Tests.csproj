@@ -99,6 +99,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\AdminController\AllTeams_Should.cs" />
+    <Compile Include="Controllers\AdminController\AllUsers_Should.cs" />
+    <Compile Include="Controllers\TeamController\AddComment_Should.cs" />
+    <Compile Include="Controllers\TeamController\AllTeams_Should.cs" />
+    <Compile Include="Controllers\TeamController\CreateTeam_Should.cs" />
+    <Compile Include="Controllers\UserController\AllUsers_Should.cs" />
+    <Compile Include="Controllers\UserController\UserInfo_Should.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
     <Compile Include="Services\TeamServiceTests\Constructor_Should.cs" />
@@ -140,6 +147,7 @@
       <Name>Team_Manager</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it.
        Other similar extension points exist, see Microsoft.Common.targets.

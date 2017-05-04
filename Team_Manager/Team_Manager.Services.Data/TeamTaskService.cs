@@ -125,7 +125,13 @@ namespace Team_Manager.Services.Data
 
         public bool CheckIfCurrentUserIsMemberOfTeamTask(int taskId, string currentUserId)
         {
+            // TODO
             var task = this.Data.GetById(taskId);
+            if (task == null)
+            {
+                return false;
+            }
+
             if (task.Team.TeamMembers.Any(u => u.Id == currentUserId))
             {
                 return true;
