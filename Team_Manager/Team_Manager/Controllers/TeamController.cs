@@ -68,7 +68,7 @@ namespace Team_Manager.Controllers
             }
         }
 
-        [OutputCache(Duration = 10*60, VaryByParam = "*")]
+        [OutputCache(Duration = 1*60, VaryByParam = "*")]
         public ActionResult TeamMembers(int teamId)
         {
             this.ValidateIfCurrentUserIsMemberOfTeam(teamId);
@@ -85,7 +85,7 @@ namespace Team_Manager.Controllers
             return this.View(teamTopics);
         }
 
-        //[OutputCache(Duration = 1*60, VaryByParam = "*")]
+        [OutputCache(Duration = 1*60, VaryByParam = "*")]
         public ActionResult ShowTeamTopic(int topicId)
         {
             TopicWithCommentsViewModel model = this.service.GetTopicById(topicId);

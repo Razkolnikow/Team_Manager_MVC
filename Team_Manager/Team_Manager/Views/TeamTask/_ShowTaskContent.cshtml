@@ -1,7 +1,9 @@
 ﻿@model string
 
-<div class="panel overflow text-primary content-container">
-    @Html.Encode(this.Model)
+<div class="row text-center flex-type">
+    <div class="panel overflow text-primary content-container col-xs-5" id="border">
+        @this.Model
+    </div>
 </div>
 
 
