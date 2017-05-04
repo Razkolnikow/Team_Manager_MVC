@@ -19,6 +19,11 @@ namespace Team_Manager.Services.Data
         public AdminService(IDbRepository<ApplicationUser> dataSet, IDbRepository<Team> teams) 
             : base(dataSet)
         {
+            if (teams == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             this.teams = teams;
         }
 

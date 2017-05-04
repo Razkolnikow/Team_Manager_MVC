@@ -33,8 +33,21 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Castle.Core, Version=4.0.0.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
+      <HintPath>..\packages\Castle.Core.4.0.0\lib\net45\Castle.Core.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.AspNet.Identity.Core, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
+    <Reference Include="Microsoft.AspNet.Identity.EntityFramework, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" />
     <Reference Include="Microsoft.CSharp" />
-    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualStudio.QualityTools.UnitTestFramework, Version=14.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MSTest.UnitTestFramework.1.0.0-alpha7\lib\dotnet\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Moq, Version=4.7.9.0, Culture=neutral, PublicKeyToken=69f491c39445e920, processorArchitecture=MSIL">
+      <HintPath>..\packages\Moq.4.7.9\lib\net45\Moq.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -80,10 +93,24 @@
       <Private>True</Private>
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
     </Reference>
+    <Reference Include="TestStack.FluentMVCTesting, Version=3.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\TestStack.FluentMVCTesting.3.0.0\lib\NET45\TestStack.FluentMVCTesting.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Controllers\HomeControllerTest.cs" />
+    <Compile Include="Services\TeamServiceTests\Constructor_Should.cs" />
+    <Compile Include="Services\TeamServiceTests\GetAllTeamTopics_Should.cs" />
+    <Compile Include="Services\TeamServiceTests\GetTeamById_Should.cs" />
+    <Compile Include="Services\TeamServiceTests\GetTopicById_Should.cs" />
+    <Compile Include="Services\TeamTaskService\Constructor_Should.cs" />
+    <Compile Include="Services\TeamTaskService\GetAllTeamTasks_Should.cs" />
+    <Compile Include="Services\TeamTaskService\GetMyTasks_Should.cs" />
+    <Compile Include="Services\TeamTaskService\GetTaskById_Should.cs" />
+    <Compile Include="Services\UserService\Constructor_Should.cs" />
+    <Compile Include="Services\UserService\FindUserById_Should.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.config" />
@@ -92,6 +119,22 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\Team_Manager.Data.Common\Team_Manager.Data.Common.csproj">
+      <Project>{F534B0CD-FB04-4D69-97E0-6C6BC1C5B363}</Project>
+      <Name>Team_Manager.Data.Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Team_Manager.Data.Models\Team_Manager.Data.Models.csproj">
+      <Project>{ab20ad6f-a2c9-47a7-871c-a77827388cd2}</Project>
+      <Name>Team_Manager.Data.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Team_Manager.Data\Team_Manager.Data.csproj">
+      <Project>{41014036-96d8-4812-9de2-ff231f9ddb2c}</Project>
+      <Name>Team_Manager.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Team_Manager.Services.Data\Team_Manager.Services.Data.csproj">
+      <Project>{2689aa11-2d4a-4ea8-949f-d9d439575db2}</Project>
+      <Name>Team_Manager.Services.Data</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Team_Manager\Team_Manager.csproj">
       <Project>{4A13316A-ECA4-42AE-9AB0-66CACE93884B}</Project>
       <Name>Team_Manager</Name>

@@ -27,18 +27,15 @@ F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\System.Web.WebPage
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.Owin.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\System.Web.Optimization.dll
-F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.AspNet.Identity.Core.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.Data.Models.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.AspNet.Identity.Owin.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.Owin.Security.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Owin.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.Owin.Security.Cookies.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.Data.dll
-F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.AspNet.Identity.EntityFramework.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\EntityFramework.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.Owin.Host.SystemWeb.dll
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.pdb
-F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.xml
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Newtonsoft.Json.xml
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\System.Web.Helpers.xml
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\System.Web.Mvc.xml
@@ -70,3 +67,8 @@ F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Ninject.Web.Common
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Ninject.xml
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Team_Manager.Data.Common.pdb
 F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\AutoMapper.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Castle.Core.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Moq.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\TestStack.FluentMVCTesting.dll
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Castle.Core.xml
+F:\Team_Manager_MVC\Team_Manager\Team_Manager.Tests\bin\Debug\Moq.xml

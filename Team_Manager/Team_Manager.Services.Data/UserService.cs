@@ -21,6 +21,11 @@ namespace Team_Manager.Services.Data
         public UserService(IDbRepository<ApplicationUser> dataSet, IDbRepository<Invitation> invitations) 
             : base(dataSet)
         {
+            if (invitations == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             this.invitations = invitations;
         }
 

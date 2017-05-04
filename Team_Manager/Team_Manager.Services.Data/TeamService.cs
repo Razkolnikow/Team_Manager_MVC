@@ -20,6 +20,11 @@ namespace Team_Manager.Services.Data
         public TeamService(IDbRepository<Team> dataSet, IDbRepository<ApplicationUser> users, IDbRepository<Topic> topics) 
             : base(dataSet)
         {
+            if (users == null || topics == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             this.users = users;
             this.topics = topics;
         }

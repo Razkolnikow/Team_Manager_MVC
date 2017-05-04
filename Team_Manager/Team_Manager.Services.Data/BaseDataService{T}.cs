@@ -14,6 +14,11 @@ namespace Team_Manager.Services.Data
     {
         protected BaseDataService(IDbRepository<T> dataSet)
         {
+            if (dataSet == null)
+            {
+                throw new ArgumentNullException();
+            }
+
             this.Data = dataSet;
         }
 
