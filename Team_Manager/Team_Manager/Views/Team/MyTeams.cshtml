@@ -11,13 +11,13 @@
             </div>
 
             <div class="bs-component">
-                <table class="table table-striped table-hover fredoka">
+                <table class="table table-striped table-hover fredoka col-md-5 col-sm-5 col-xs-6">
                     <thead>
                         <tr>
                             <th>#</th>
                             <th>Team Name</th>
                             <th>Category</th>
-                            <th>SubCategory</th>
+                            <th class="column-notvisible">SubCategory</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -27,10 +27,10 @@
                             <td>@row</td>
                             <td>@team.Name</td>
                             <td>@team.Category</td>
-                            <td>@team.SubCategory</td>
+                            <td class="column-notvisible">@team.SubCategory</td>
                         </tr>
                         <tr class="active menu hoverClick fredoka">
-                            <td><a>@Html.ActionLink("Creator", "Creator", "Team", new {teamId = team.Id}, null)</a></td>
+                            <td class="column-notvisible"><a>@Html.ActionLink("Creator", "Creator", "Team", new {teamId = team.Id}, null)</a></td>
                             <td><a>@Html.ActionLink("Topics", "TeamTopics", "Team", new { teamId = team.Id }, null)</a></td>
                             <td><a>@Html.ActionLink("Tasks", "AllTasksOfTeam", "TeamTask", new { teamId = team.Id }, null)</a></td>
                             <td>@Html.ActionLink("Members", "TeamMembers", "Team", new { teamId = team.Id }, null)</td>
