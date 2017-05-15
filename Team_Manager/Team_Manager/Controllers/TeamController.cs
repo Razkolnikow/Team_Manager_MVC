@@ -32,11 +32,21 @@ namespace Team_Manager.Controllers
             return this.RedirectToAction("UserInfo", "User", new {userId = creatorId});
         }
 
-        [OutputCache(Duration = 60*60, VaryByParam = "*")]
         public ActionResult AllTeams()
         {
-            IEnumerable<TeamAdminViewModel> models = this.service.GetAllTeams();
-            return this.View(models);
+            if (this.HttpContext.Cache["allteams"] == null)
+            {
+                this.HttpContext.Cache.Insert(
+                    "allteams",
+                    this.service.GetAllTeams(),
+                    null,
+                    DateTime.Now.AddSeconds(2*60),
+                    TimeSpan.Zero,
+                    CacheItemPriority.Default,
+                    null);    
+            }
+            
+            return this.View(this.HttpContext.Cache["allteams"]);
         }
 
         public ActionResult MyTeamMates()
@@ -74,7 +84,7 @@ namespace Team_Manager.Controllers
             }
         }
 
-        [OutputCache(Duration = 1*60, VaryByParam = "*")]
+        //[OutputCache(Duration = 1*60, VaryByParam = "*")]
         public ActionResult TeamMembers(int teamId)
         {
             this.ValidateIfCurrentUserIsMemberOfTeam(teamId);
